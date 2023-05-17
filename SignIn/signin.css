@@ -1,0 +1,49 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto';
+}
+
+@media (max-width: 428px) {
+    main{
+        height: 100vh;
+        width: 100vw;
+        background-image: url(../images/signin.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+        object-fit: contain;
+    }
+
+    .signin-text{
+        font-weight: 600;
+        font-size: 24px;
+        line-height: 28.13px;
+        text-align: center;
+        letter-spacing: 0.01em;
+        top: 6rem;
+        /* left: 11rem; */
+    }
+
+    form{
+        top: 25.5rem;
+        left: 1.25rem;
+    }
+
+    input{
+        background-color: inherit;
+        border-bottom: 1px solid rgba(11, 11, 11, 0.5);
+        width: 24.25rem;
+        padding-left: 1.8rem;
+        outline: none;
+    }
+
+    input::placeholder{
+        font-size: 14px;
+        line-height: 16px;
+        font-weight: 500;
+        letter-spacing: 0.01em;
+        color: rgba(11, 11, 11, 0.5);
+    }
+}
