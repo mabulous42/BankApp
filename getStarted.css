@@ -12,6 +12,17 @@
         background-size: contain;
         background-repeat: no-repeat;
     }
+    .getstarted-text-div{
+        top: 10vh;
+    }
+
+    .safe-text{
+        color: rgb(16,173,99);
+    }
+
+    .banking{
+        color: rgb(0,175,239);
+    }
 }
 
 @media (max-width: 393px) {
@@ -21,4 +32,5 @@
         background-size: contain;
         background-repeat: no-repeat;
     }
+
 }
