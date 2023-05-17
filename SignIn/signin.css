@@ -57,6 +57,10 @@
         background-color: rgba(0, 168, 89, 1);
     }
 
+    button:hover{
+        background-color: rgb(37, 180, 113);
+    }
+
     .signin-btn-text{
         font-weight: 500;
         font-size: 24px;
