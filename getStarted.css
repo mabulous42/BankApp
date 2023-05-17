@@ -1,32 +1,67 @@
-*{
+* {
     margin: 0;
     padding: 0;
     border: 0;
+    font-family: 'Roboto';
 }
 
 @media (max-width: 428px) {
-    main{
+    main {
         height: 100vh;
         width: 100vw;
         background-image: url(./images/onboarding.png);
         background-size: contain;
         background-repeat: no-repeat;
     }
-    .getstarted-text-div{
+
+    .getstarted-text-div {
         top: 10vh;
     }
 
-    .safe-text{
-        color: rgb(16,173,99);
+    .safe-h3 {
+        font-size: 28px;
     }
 
-    .banking{
-        color: rgb(0,175,239);
+    .safe-text {
+        color: rgb(16, 173, 99);
+    }
+
+    .offer-h6 {
+        font-size: 16px;
+    }
+
+    .banking {
+        color: rgb(0, 175, 239);
+    }
+
+    .getstarted-btn-div {
+        top: 47.44rem;
+    }
+
+    .getstarted-btn {
+        width: 24.25rem;
+        height: 3.9rem;
+        background-color: rgba(0, 168, 89, 1);
+    }
+
+    .getstarted-btn:hover{
+        background-color: rgb(2, 19, 11);
+    }
+
+    .get-started-text {
+        font-size: 24px;
+        font-weight: 500;
+        color: rgba(255, 255, 255, 1);
+        line-height: 28.13px;
+    }
+
+    .vector {
+        margin-left: 0.65rem;
     }
 }
 
 @media (max-width: 393px) {
-    main{
+    main {
         height: 100vh;
         background-image: url(./images/onboarding.png);
         background-size: contain;
