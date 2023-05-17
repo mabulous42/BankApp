@@ -10,5 +10,6 @@
         width: 100vw;
         background-image: url(./images/onboarding.png);
         background-size: contain;
+        background-repeat: no-repeat;
     }
 }
