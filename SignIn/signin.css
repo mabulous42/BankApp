@@ -55,6 +55,26 @@
         width: 24.25rem;
         background-color: inherit;
         background-color: rgba(0, 168, 89, 1);
+    }
 
+    .signin-btn-text{
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 28px;
+        text-align: center;
+        color: rgba(255, 255, 255, 1);
+    }
+
+    .no-acct-div{
+        top: 48.9rem;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 19px;
+        text-align: center;
+        letter-spacing: 0.01em;
+    }
+
+    .sign-up-text{
+        color: rgba(0, 168, 89, 1);
     }
 }
