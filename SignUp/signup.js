@@ -13,7 +13,7 @@ hideConfirmPass.style.display = "none";
 
 //this function navigates from the signup page to signin page
 function gotoSignIn() {
-    window.location.href = "../signin.html";
+    window.location.href = "../SignIn/signin.html";
 }
 
 //this function checks if the check box is checked or not and then triggers the button state from disabled to enabled and vice versa
