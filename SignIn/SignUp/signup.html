@@ -16,18 +16,22 @@
 <body>
     <main class="position-relative">
         <h3 class="signup-text position-absolute w-100">Sign Up</h3>
-        <form class="position-absolute w-100">
-            <input type="text" name="" id="fname" placeholder="First Name" class="py-2 mb-4">
-            <input type="text" name="" id="lname" placeholder="Last Name" class="py-2 mb-4">
-            <input type="email" name="" id="email" placeholder="Email" class="py-2 mb-4">
-            <input type="number" name="" id="phone" placeholder="Phone No" class="py-2 mb-4">
-            <input type="password" name="" id="password" placeholder="Password" class="py-2 mb-4">
-            <input type="password" name="" id="confirm-password" placeholder="Re-enter password" class="py-2 mb-4">
-            <div class="d-flex w-100 ms-2">
-                <input type="checkbox" name="" id="" class="check-box mx-3">
+        <form class="position-absolute">
+            <input type="text" name="" id="fname" placeholder="First Name" class="py-2 mb-4" required>
+            <input type="text" name="" id="lname" placeholder="Last Name" class="py-2 mb-4" required>
+            <input type="email" name="" id="email" placeholder="Email" class="py-2 mb-4" required>
+            <input type="number" name="" id="phone" placeholder="Phone No" class="py-2 mb-4" required>
+            <input type="password" name="" id="password" placeholder="Password" class="py-2 mb-4" required>
+            <input type="password" name="" id="confirm-password" placeholder="Re-enter password" class="py-2 mb-4" required>
+            <div class="d-flex ms-2">
+                <input type="checkbox" name="" id="check-box" class="check-box mx-3" onchange="checkBox()">
                 <h6 class="creating">By creating an account you agree to our terms and condition</h6>
             </div>
+            <div class="position-absolute w-100 btn-div">
+                <button id="signUp-btn" type="submit" class="rounded" disabled><span class="signupbtn-text">Sign Up</span></button>
+            </div>
         </form>
+        <h6 class="position-absolute have-account w-100">Already have an account? <span class="sign-in-text" onclick="gotoSignIn()">Sign In</span></h6>
 
     </main>
 

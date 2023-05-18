@@ -59,4 +59,35 @@
         letter-spacing: 0.01em;
         color: rgba(11, 11, 11, 0.5);
     }
+
+    .btn-div{
+        top: 30.5rem;
+    }
+
+    button{
+        background-color: rgba(217, 217, 217, 1);
+        width: 24.25rem;
+        height: 3.625rem;
+    }
+
+    .signupbtn-text{
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 28px;
+        color: rgba(11, 11, 11, 1);
+    }
+
+    .have-account{
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 19px;
+        letter-spacing: 0.01em;
+        color: rgba(11, 11, 11, 1);
+        top: 51rem;
+        text-align: center;
+    }
+
+    .sign-in-text{
+        color: rgba(0, 168, 89, 1);
+    }
 }
