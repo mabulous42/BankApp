@@ -90,4 +90,9 @@
     .sign-in-text{
         color: rgba(0, 168, 89, 1);
     }
+
+    .showhide{
+        top: 0;
+        right: 1.25rem;
+    }
 }
