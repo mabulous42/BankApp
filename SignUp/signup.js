@@ -29,6 +29,7 @@ function checkBox() {
     }
 }
 
+//toggling between show and hide password function
 function showPassword() {
     if (passwordInput.type == "password") {
         passwordInput.type = "text";
@@ -41,6 +42,7 @@ function showPassword() {
     }
 }
 
+//toggling between show and hide password function
 function hidePassword() {
     if (passwordInput.type == "text") {
         passwordInput.type = "password";
@@ -53,6 +55,7 @@ function hidePassword() {
     }
 }
 
+//toggling between show and hide confirm password function
 function showConfirmPassword() {
     if (confirmPasswordInput.type == "password") {
         confirmPasswordInput.type = "text";
@@ -65,6 +68,7 @@ function showConfirmPassword() {
     }
 }
 
+//toggling between show and hide confirm password function
 function hideConfirmPassword() {
     if (confirmPasswordInput.type == "text") {
         confirmPasswordInput.type = "password";
@@ -77,3 +81,9 @@ function hideConfirmPassword() {
     }
 }
 
+//registering a new user
+function signUp(ev) {
+    ev.preventDefault();
+    window.location.href = "../Generating/generating.html";
+    
+}
