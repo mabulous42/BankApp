@@ -15,6 +15,6 @@ console.log(registeredCustomer);
 
 //this function saves the modified customer data back to the local storage and then proceed to the next page
 function gotoSignIn() {
-    localStorage.setItem('customer', JSON.stringify(registeredCustomer));
-    window.location.href = "../Signin/signin.html";
+    localStorage.setItem('customers', JSON.stringify(registeredCustomer));
+    window.location.href = "../TransactionPin/transactionPin.html";
 }
