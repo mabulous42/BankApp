@@ -7,6 +7,10 @@ let hidePass = document.getElementById("hide-pass");
 let showPass = document.getElementById("show-pass");
 let hideConfirmPass = document.getElementById("hide-cPass");
 let showConfirmPass = document.getElementById("show-cPass");
+let firstName = document.getElementById("fname");
+let lastName = document.getElementById("lname");
+let emailInput = document.getElementById("email-input");
+let phoneNumber = document.getElementById("phone-input");
 
 hidePass.style.display = "none";
 hideConfirmPass.style.display = "none";
@@ -81,9 +85,28 @@ function hideConfirmPassword() {
     }
 }
 
+//fetching the details of refistered users/customers from the local storage
+let bankEaseCustomers = JSON.parse(localStorage.getItem('customers')) || [];
+
 //registering a new user
-function signUp(ev) {
+signUpBtn.addEventListener("click", (ev)=> {
     ev.preventDefault();
-    window.location.href = "../Generating/generating.html";
-    
-}
+
+    let data = {
+        firstName: firstName.value,
+        lastName: lastName.value,
+        email: emailInput.value,
+        phoneNumber: phoneNumber.value,
+        password: passwordInput.value
+    }
+
+    if (passwordInput.value.trim() === "") {
+        alert("Please fill in the input field.");
+    } else {
+        // Proceed with the desired action
+        bankEaseCustomers.push(data);
+        localStorage.setItem('customers', JSON.stringify(bankEaseCustomers));
+        console.log(bankEaseCustomers);
+        window.location.href = "../Generating/generating.html";
+    }
+})
