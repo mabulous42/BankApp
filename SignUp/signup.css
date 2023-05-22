@@ -7,7 +7,7 @@
 }
 
 @media (max-width: 428px) {
-    main{
+    main {
         height: 100vh;
         width: 100vw;
         background-image: url(../../images/signup.png);
@@ -16,7 +16,7 @@
         object-fit: contain;
     }
 
-    .signup-text{
+    .signup-text {
         top: 6rem;
         font-weight: 600;
         font-size: 24px;
@@ -25,20 +25,20 @@
         color: rgba(11, 11, 11, 1);
     }
 
-    form{
+    form {
         top: 15.6rem;
         left: 1.25rem;
     }
 
-    input{
+    input {
         width: 24.25rem;
         background-color: inherit;
         border-bottom: 1px solid rgba(11, 11, 11, 0.5);
         padding-left: 1.8rem;
-        outline: none;      
+        outline: none;
     }
 
-    input::placeholder{
+    input::placeholder {
         font-weight: 500;
         font-size: 14px;
         line-height: 16px;
@@ -46,12 +46,16 @@
         color: rgba(11, 11, 11, 0.5);
     }
 
-    .check-box{
+    /* input:required:invalid {
+        border: 1px solid red;
+    } */
+
+    .check-box {
         width: 1.3rem;
         height: 1.3rem;
     }
 
-    .creating{
+    .creating {
         width: 17rem;
         font-weight: 400;
         font-size: 16px;
@@ -60,24 +64,24 @@
         color: rgba(11, 11, 11, 0.5);
     }
 
-    .btn-div{
+    .btn-div {
         top: 30.5rem;
     }
 
-    button{
+    button {
         background-color: rgba(217, 217, 217, 1);
         width: 24.25rem;
         height: 3.625rem;
     }
 
-    .signupbtn-text{
+    .signupbtn-text {
         font-weight: 500;
         font-size: 24px;
         line-height: 28px;
         color: rgba(11, 11, 11, 1);
     }
 
-    .have-account{
+    .have-account {
         font-weight: 400;
         font-size: 16px;
         line-height: 19px;
@@ -87,11 +91,11 @@
         text-align: center;
     }
 
-    .sign-in-text{
+    .sign-in-text {
         color: rgba(0, 168, 89, 1);
     }
 
-    .showhide{
+    .showhide {
         top: 0;
         right: 1.25rem;
     }

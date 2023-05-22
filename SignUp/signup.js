@@ -99,7 +99,7 @@ signUpBtn.addEventListener("click", (ev)=> {
         phoneNumber: phoneNumber.value,
         password: passwordInput.value
     }
-
+    //checking if this field is filled or not
     if (passwordInput.value.trim() === "") {
         alert("Please fill in the input field.");
     } else {
@@ -110,3 +110,4 @@ signUpBtn.addEventListener("click", (ev)=> {
         window.location.href = "../Generating/generating.html";
     }
 })
+
