@@ -10,9 +10,44 @@
     main {
         height: 100vh;
         width: 100vw;
-        background-image: url(../../images/signup.png);
+        background-image: url(../images/generatedAccount.png);
         background-size: cover;
         background-repeat: no-repeat;
         object-fit: contain;
+    }
+
+    .bankease-div{
+        top: 10.13rem;
+        text-align: center;
+    }
+
+    .bankease-img{
+        width: 40%;
+    }
+
+    .transaction-pin-txt{
+        top: 24.94rem;
+        text-align: center;
+        font-weight: 400;
+        line-height: 21px;
+        font-size: 18px;
+        letter-spacing: 0.01em;
+        color: rgba(11, 11, 11, 0.8);
+    }
+
+    .input-div{
+        top: 31.25rem;
+    }
+
+    input[type='number']{
+        width: 20%;
+        text-align: center;
+        border-bottom: 1px solid rgba(11, 11, 11, 0.5);
+        background-color: inherit;
+        outline: none;
+        padding: 10px 5px;
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 28px;
     }
 }

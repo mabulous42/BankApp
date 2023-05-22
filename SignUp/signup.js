@@ -101,8 +101,25 @@ signUpBtn.addEventListener("click", (ev)=> {
     }
     //checking if this field is filled or not
     if (passwordInput.value.trim() === "") {
-        alert("Please fill in the input field.");
-    } else {
+        alert("Please fill in the password field.");
+    } 
+    else if (emailInput.value.trim() === "") {
+        alert("Please fill in the email field.")
+    }
+    else if (firstName.value.trim() === "" || lastName.value.trim() === "") {
+        alert("Please fill in the name field.")
+    }
+    else if (phoneNumber.value.trim() === "" || lastName.value.trim() === "") {
+        alert("Please fill in the phone number field.")
+    }
+    else if (passwordInput.value != confirmPasswordInput.value) {
+        alert("Password does not matched")
+    }
+    else if (passwordInput.value.length < 8) {
+        alert("Your password must be at least 8 characters long")
+    }
+    
+    else {
         // Proceed with the desired action
         bankEaseCustomers.push(data);
         localStorage.setItem('customers', JSON.stringify(bankEaseCustomers));
