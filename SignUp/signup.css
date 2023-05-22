@@ -10,7 +10,8 @@
     main {
         height: 100vh;
         width: 100vw;
-        background-image: url(../images/signup.png)
+        background-image: url(../images/signup.png);
+        background-size: contain;
         background-repeat: no-repeat;
         object-fit: contain;
     }
