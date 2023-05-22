@@ -1,0 +1,75 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto';
+}
+
+
+@media (max-width: 428px) {
+    main{
+        height: 100vh;
+        width: 100vw;
+        background-image: url(../images/generatedAccount.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+        object-fit: contain;
+    }
+
+    .thanks-text{
+        top: 11.75rem;
+        text-align: center;
+        font-size: 18px;
+        letter-spacing: 0.01em;
+        line-height: 21px;
+        font-weight: 500;
+    }
+
+    .bankease{
+        top: 14.38rem;
+        text-align: center;
+    }
+
+    .bankease-img{
+        width: 40%;
+    }
+
+    .your-account-no{
+        top: 24.9rem;
+        text-align: center;
+        font-size: 18px;
+        line-height: 21px;
+        letter-spacing: 0.01em;
+        font-weight: 400;
+    }
+
+    #account-number{
+        position: absolute;
+        top: 28.94rem;
+        width: 100%;
+        text-align: center;
+        font-weight: 500;
+        line-height: 42px;
+        font-size: 36px;
+        letter-spacing: 0.12em;
+        color: rgba(11, 11, 11, 1);
+    }
+
+    .continue-btn-div{
+        top: 44.19rem;
+        text-align: center;
+    }
+
+    .continue-btn{
+        width: 90%;
+        background-color: rgba(0, 168, 89, 1);
+        height: 3.63rem;
+    }
+
+    .continue-txt{
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 28px;
+    }
+}
