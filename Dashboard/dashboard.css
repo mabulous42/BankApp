@@ -41,8 +41,8 @@
     .barcode{
         width: 1.6rem;
         height: 1.6rem;
-        margin-left: 4rem;
-        margin-right: 1rem;
+        /* margin-left: 4rem; */
+        /* margin-right: 1rem; */
     }
 
     .bell{
