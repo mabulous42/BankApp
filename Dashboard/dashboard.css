@@ -8,7 +8,7 @@
 
 @media (max-width: 428px) {
     main {
-        height: 95vh;
+        height: 100vh;
         width: 100vw;
         object-fit: contain;
     }
@@ -50,5 +50,12 @@
 
     .dashboard-content{
         height: 44.6rem;
+    }
+
+    .customer-account-record{
+        width: 90%;
+        height: 14.3rem;
+        background-image: url(../images/card.png);
+        background-size: cover;
     }
 }
