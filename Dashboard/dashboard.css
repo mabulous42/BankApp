@@ -8,7 +8,7 @@
 
 @media (max-width: 428px) {
     main {
-        height: 100vh;
+        height: 95vh;
         width: 100vw;
         object-fit: contain;
     }
@@ -46,5 +46,9 @@
     .bell{
         width: 1.6rem;
         height: 1.6rem;
+    }
+
+    .dashboard-content{
+        height: 44.6rem;
     }
 }
