@@ -88,8 +88,9 @@ function hideConfirmPassword() {
 //fetching the details of refistered users/customers from the local storage
 let bankEaseCustomers = JSON.parse(localStorage.getItem('customers')) || [];
 
+
 //registering a new user
-signUpBtn.addEventListener("click", (ev)=> {
+signUpBtn.addEventListener("click", (ev) => {
     ev.preventDefault();
 
     let data = {
@@ -99,17 +100,33 @@ signUpBtn.addEventListener("click", (ev)=> {
         phoneNumber: phoneNumber.value,
         password: passwordInput.value
     }
-    //checking if this field is filled or not
+
+    let isEmailExists = bankEaseCustomers.some(function (obj) {
+        return obj.email === emailInput.value;
+    });
+
+    let isPhoneNumberExists = bankEaseCustomers.some(function (obj) {
+        return obj.phoneNumber === phoneNumber.value;
+    });
+
+    // let foundEmail = bankEaseCustomers.find(element => element.email.includes(emailInput.value));
+    // console.log(foundEmail.email);
+
+    // let foundPhone = bankEaseCustomers.find(element => element.phoneNumber.includes(phoneNumber.value))
+    // console.log(foundPhone.phoneNumber.includes(phoneNumber.value));
+
+
+    //checking if these fields are filled or not
     if (passwordInput.value.trim() === "") {
         alert("Please fill in the password field.");
-    } 
+    }
     else if (emailInput.value.trim() === "") {
         alert("Please fill in the email field.")
     }
     else if (firstName.value.trim() === "" || lastName.value.trim() === "") {
         alert("Please fill in the name field.")
     }
-    else if (phoneNumber.value.trim() === "" || lastName.value.trim() === "") {
+    else if (phoneNumber.value.trim() === "") {
         alert("Please fill in the phone number field.")
     }
     else if (passwordInput.value != confirmPasswordInput.value) {
@@ -118,13 +135,21 @@ signUpBtn.addEventListener("click", (ev)=> {
     else if (passwordInput.value.length < 8) {
         alert("Your password must be at least 8 characters long")
     }
-    
+    else if (isEmailExists) {
+        alert('Email address already exists');
+    }
+
+    else if (isPhoneNumberExists) {
+        alert('Phone number has already been used');
+    }
     else {
         // Proceed with the desired action
         bankEaseCustomers.push(data);
         localStorage.setItem('customers', JSON.stringify(bankEaseCustomers));
         console.log(bankEaseCustomers);
-        window.location.href = "../Generating/generating.html";
+        setTimeout(() => {
+            window.location.href = "../Generating/generating.html";            
+        }, 2000);
     }
 })
 

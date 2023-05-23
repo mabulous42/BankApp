@@ -31,5 +31,7 @@ function gotoSignIn() {
     // All PIN digits are filled, proceed with further actions
     console.log('PIN entered:', pinDigits);
     localStorage.setItem('customers', JSON.stringify(bankEaseCustomer));
-    window.location.href = "../Signin/signin.html";
+    setTimeout(() => {
+        window.location.href = "../Signin/signin.html";        
+    }, 2000);
 }
