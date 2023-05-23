@@ -86,4 +86,33 @@
         line-height: 28px;
         color: rgba(255, 255, 255, 1);
     }
+
+    .transaction-history-div{
+        top: 1.2rem;
+        left: 15rem;
+    }
+
+    .transaction-history-text,
+    .bankease-accountno-div h3{
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 14px;
+        color: rgba(255, 255, 255, 1);
+    }
+
+    .arrow{
+        margin-top: -10px;
+    }
+
+    .bankease-accountno-div{
+        top: 5.94rem;
+        left: 1.25rem;
+    }
+
+    .bankease-accountno-div h2{
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 19px;
+        color: rgba(255, 255, 255, 1);
+    }
 }
