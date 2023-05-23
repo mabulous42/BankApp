@@ -15,7 +15,11 @@ function signIn(ev) {
     
     if (authorizedUser) {
         alert("Login Successful")
-        console.log(authorizedUser);
+        localStorage.setItem('CU', JSON.stringify(authorizedUser));
+        setTimeout(() => {
+            window.location.href = "../Dashboard/dashboard.html";
+        }, 2000);
+
     } else {
         alert("User Credentials is incorrect")
     }

@@ -4,6 +4,10 @@ let registeredCustomer = JSON.parse(localStorage.getItem('customers'));
 //getting the array index of the current registered customer
 let currentRegisteredCustomer = registeredCustomer.length - 1;
 
+
+//displaying the name of the current registered customer
+document.getElementById('account-holder-name').innerHTML = registeredCustomer[currentRegisteredCustomer].firstName;
+
 let accountDigit;
 
 //tis function generates the account number
