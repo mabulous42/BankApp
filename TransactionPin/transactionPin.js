@@ -7,7 +7,7 @@ function moveToNext(currentInput, nextInputId) {
     }
 }
 
-let bankEaseCustomer = JSON.parse(localStorage.getItem('customers')) || [];
+let bankEaseCustomer = JSON.parse(localStorage.getItem('customers'));
 
 //showing all the registered customer on console
 console.log(bankEaseCustomer);
