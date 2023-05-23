@@ -28,9 +28,13 @@ function hideAndShowBalance() {
     if (currentUser.isHide == true) {
         hideCurrentBalance.style.display = "block";
         currentBalance.style.display = "none";
+        displayBalance.style.display = "block";
+        hide_Balance.style.display = "none";
     } else {
         hideCurrentBalance.style.display = "none";
         currentBalance.style.display = "block";
+        displayBalance.style.display = "none";
+        hide_Balance.style.display = "block";
     }
 }
 hideAndShowBalance();
