@@ -58,4 +58,32 @@
         background-image: url(../images/card.png);
         background-size: cover;
     }
+
+    .current-balance-div{
+        top: 1.2rem;
+        left: 1.25rem;
+    }
+
+    .current-balance-div h6{
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 16px;
+        color: rgba(255, 255, 255, 1);
+    }
+
+    .current-balance-div i{
+        color: rgba(255, 255, 255, 1);
+    }
+
+    .balance-div{
+        top: 3.3rem;
+        left: 1.25rem;
+    }
+
+    .balance-div{
+        font-weight: 800;
+        font-size: 24px;
+        line-height: 28px;
+        color: rgba(255, 255, 255, 1);
+    }
 }

@@ -98,7 +98,8 @@ signUpBtn.addEventListener("click", (ev) => {
         lastName: lastName.value,
         email: emailInput.value,
         phoneNumber: phoneNumber.value,
-        password: passwordInput.value
+        password: passwordInput.value,
+        isHide: false
     }
 
     let isEmailExists = bankEaseCustomers.some(function (obj) {
