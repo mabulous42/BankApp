@@ -39,12 +39,14 @@
     }
 
     .barcode{
-        width: 1.8rem;
-        margin-left: 2.5rem;
+        width: 1.6rem;
+        height: 1.6rem;
+        margin-left: 4rem;
         margin-right: 1rem;
     }
 
     .bell{
-        width: 1.8rem;
+        width: 1.6rem;
+        height: 1.6rem;
     }
 }
