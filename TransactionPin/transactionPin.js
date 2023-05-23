@@ -9,6 +9,9 @@ function moveToNext(currentInput, nextInputId) {
 
 let bankEaseCustomer = JSON.parse(localStorage.getItem('customers')) || [];
 
+//showing all the registered customer on console
+console.log(bankEaseCustomer);
+
 //this function checks if all the inputs are filled and concatenate each input field value inside a variable
 function gotoSignIn() {
     let pinDigits = '';
@@ -17,15 +20,13 @@ function gotoSignIn() {
     for (let i = 0; i < pinInputs.length; i++) {
       if (pinInputs[i].value === '') {
         // Empty field found, display an error message or handle the validation failure
-        console.log('Please fill in all PIN digits');
+        alert('Please fill in all PIN digits');
         return;
       }
       pinDigits += pinInputs[i].value;
-
-      bankEaseCustomer.forEach(element => {
-        element.transactionPin = pinDigits
-      });
     }
+    
+    bankEaseCustomer[bankEaseCustomer.length-1].transactionPin = pinDigits;
   
     // All PIN digits are filled, proceed with further actions
     console.log('PIN entered:', pinDigits);
