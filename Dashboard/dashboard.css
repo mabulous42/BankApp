@@ -115,4 +115,30 @@
         line-height: 19px;
         color: rgba(255, 255, 255, 1);
     }
+
+    .card-details-div{
+        top: 5.94rem;
+        left: 14.4rem;
+    }
+
+    .card-details-div h5,
+    .card-details-div h4{
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 14px;
+        color: rgba(255, 255, 255, 1);
+    }
+
+    .card-details-div h4{
+        font-size: 16px;
+        line-height: 19px;
+    }
+
+    .card-details-div small{
+        color: rgba(217, 217, 217, 1);
+        font-weight: 400;
+        font-size: 10px;
+        line-height: 12px;
+        top: 2.8rem;
+    }
 }
