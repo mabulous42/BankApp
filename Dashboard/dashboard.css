@@ -181,6 +181,10 @@
         color: rgba(237, 50, 55, 1);
     }
 
+    .hr{
+        background-color: rgba(217, 217, 217, 1);
+    }
+
     .quick-access-div{
         width: 90%;
     }
