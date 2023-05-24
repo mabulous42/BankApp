@@ -6,6 +6,262 @@
     font-family: 'Roboto';
 }
 
+main {
+    height: 100vh;
+    width: 100vw;
+    object-fit: contain;
+}
+
+.header-div {
+    border-bottom: 0.5px solid #D9D9D9;
+}
+
+.avatar {
+    width: 2.5rem;
+    height: 2.5rem;
+}
+
+.welcome-text {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+}
+
+#customer-name {
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 18px;
+}
+
+.scan {
+    margin: auto;
+}
+
+.barcode {
+    width: 1.6rem;
+    height: 1.6rem;
+}
+
+.bell {
+    width: 1.6rem;
+    height: 1.6rem;
+}
+
+.dashboard-content {
+    height: 44.6rem;
+}
+
+.customer-account-record {
+    width: 90%;
+    height: 14.3rem;
+    background-image: url(../images/card.png);
+    background-size: cover;
+}
+
+.current-balance-div {
+    top: 1.2rem;
+    left: 1.25rem;
+}
+
+.current-balance-div h6 {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    color: rgba(255, 255, 255, 1);
+}
+
+.current-balance-div i {
+    color: rgba(255, 255, 255, 1);
+}
+
+.balance-div {
+    top: 3.3rem;
+    left: 1.25rem;
+}
+
+.balance-div {
+    font-weight: 800;
+    font-size: 24px;
+    line-height: 28px;
+    color: rgba(255, 255, 255, 1);
+}
+
+.transaction-history-div {
+    top: 1.2rem;
+    left: 15rem;
+}
+
+.transaction-history-text,
+.bankease-accountno-div h3 {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 14px;
+    color: rgba(255, 255, 255, 1);
+}
+
+.arrow {
+    margin-top: -10px;
+}
+
+.bankease-accountno-div {
+    top: 5.94rem;
+    left: 1.25rem;
+}
+
+.bankease-accountno-div h2 {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    color: rgba(255, 255, 255, 1);
+}
+
+.card-details-div {
+    top: 5.94rem;
+    left: 14.4rem;
+}
+
+.card-details-div h5,
+.card-details-div h4 {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 14px;
+    color: rgba(255, 255, 255, 1);
+}
+
+.card-details-div h4 {
+    font-size: 16px;
+    line-height: 19px;
+}
+
+.card-details-div small {
+    color: rgba(217, 217, 217, 1);
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 12px;
+    top: 2.8rem;
+}
+
+.add-money-div {
+    top: 10.38rem;
+    left: 1.25rem;
+    width: 8rem;
+    /* height: 2.3rem; */
+}
+
+.add-money-div button,
+.send-money-div button {
+    padding: 3px;
+    background-color: rgba(255, 255, 255, 1);
+}
+
+.add-money-div button img,
+.send-money-div button img {
+    margin-top: -3px;
+    width: 55%;
+}
+
+.add-money-div button h5 {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 14px;
+    color: rgba(0, 168, 89, 1);
+}
+
+.send-money-div {
+    top: 10.38rem;
+    left: 14.63rem;
+    width: 8.625rem;
+}
+
+.send-money-div button h5 {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 14px;
+    color: rgba(237, 50, 55, 1);
+}
+
+.hr {
+    border-bottom: 1px solid #D9D9D9;
+    /* background-color: rgba(217, 217, 217, 1); */
+}
+
+.quick-access-div {
+    width: 90%;
+}
+
+.quick-access-div h4 {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 19px;
+}
+
+.quick-access-div h5 {
+    font-size: 16px;
+    line-height: 19px;
+    font-weight: 500;
+    color: rgba(0, 175, 239, 1);
+}
+
+.arrow2 {
+    margin-top: -6px;
+}
+
+.links {
+    width: 90%;
+}
+
+.div-circle {
+    width: 3.5rem;
+    height: 3.5rem;
+}
+
+.links h5 {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16px;
+}
+
+.link-div2 {
+    background-color: rgba(0, 175, 239, 1);
+}
+
+.link-div3 {
+    background-color: rgba(255, 185, 5, 1);
+}
+
+.link-div4 {
+    background-color: rgba(237, 50, 55, 1);
+}
+
+.link-div5 {
+    background-color: rgba(0, 168, 89, 1);
+}
+
+.link-div6 {
+    background-color: rgba(201, 0, 181, 1);
+}
+
+.link-div7 {
+    background-color: rgba(151, 71, 255, 1);
+}
+
+.link-div8 {
+    background-color: rgba(99, 50, 237, 1);
+}
+
+.img-slider-div {
+    width: 90%;
+    height: 14.25rem;
+}
+
+.footer {
+    bottom: 0;
+    height: 4.8rem;
+    border-top: 0.5px solid #D9D9D9;
+    background-color: rgba(255, 255, 255, 1);
+}
+
+
 @media (max-width: 428px) {
     main {
         height: 100vh;
@@ -13,128 +269,128 @@
         object-fit: contain;
     }
 
-    .header-div{
+    .header-div {
         border-bottom: 0.5px solid #D9D9D9;
     }
 
-    .avatar{
+    .avatar {
         width: 2.5rem;
         height: 2.5rem;
     }
 
-    .welcome-text{
+    .welcome-text {
         font-weight: 400;
         font-size: 12px;
         line-height: 14px;
     }
 
-    #customer-name{
+    #customer-name {
         font-weight: 500;
         font-size: 15px;
         line-height: 18px;
     }
 
-    .scan{
+    .scan {
         margin: auto;
     }
 
-    .barcode{
+    .barcode {
         width: 1.6rem;
         height: 1.6rem;
     }
 
-    .bell{
+    .bell {
         width: 1.6rem;
         height: 1.6rem;
     }
 
-    .dashboard-content{
+    .dashboard-content {
         height: 44.6rem;
     }
 
-    .customer-account-record{
+    .customer-account-record {
         width: 90%;
         height: 14.3rem;
         background-image: url(../images/card.png);
         background-size: cover;
     }
 
-    .current-balance-div{
+    .current-balance-div {
         top: 1.2rem;
         left: 1.25rem;
     }
 
-    .current-balance-div h6{
+    .current-balance-div h6 {
         font-weight: 500;
         font-size: 14px;
         line-height: 16px;
         color: rgba(255, 255, 255, 1);
     }
 
-    .current-balance-div i{
+    .current-balance-div i {
         color: rgba(255, 255, 255, 1);
     }
 
-    .balance-div{
+    .balance-div {
         top: 3.3rem;
         left: 1.25rem;
     }
 
-    .balance-div{
+    .balance-div {
         font-weight: 800;
         font-size: 24px;
         line-height: 28px;
         color: rgba(255, 255, 255, 1);
     }
 
-    .transaction-history-div{
+    .transaction-history-div {
         top: 1.2rem;
         left: 15rem;
     }
 
     .transaction-history-text,
-    .bankease-accountno-div h3{
+    .bankease-accountno-div h3 {
         font-weight: 500;
         font-size: 12px;
         line-height: 14px;
         color: rgba(255, 255, 255, 1);
     }
 
-    .arrow{
+    .arrow {
         margin-top: -10px;
     }
 
-    .bankease-accountno-div{
+    .bankease-accountno-div {
         top: 5.94rem;
         left: 1.25rem;
     }
 
-    .bankease-accountno-div h2{
+    .bankease-accountno-div h2 {
         font-weight: 500;
         font-size: 16px;
         line-height: 19px;
         color: rgba(255, 255, 255, 1);
     }
 
-    .card-details-div{
+    .card-details-div {
         top: 5.94rem;
         left: 14.4rem;
     }
 
     .card-details-div h5,
-    .card-details-div h4{
+    .card-details-div h4 {
         font-weight: 500;
         font-size: 12px;
         line-height: 14px;
         color: rgba(255, 255, 255, 1);
     }
 
-    .card-details-div h4{
+    .card-details-div h4 {
         font-size: 16px;
         line-height: 19px;
     }
 
-    .card-details-div small{
+    .card-details-div small {
         color: rgba(217, 217, 217, 1);
         font-weight: 400;
         font-size: 10px;
@@ -142,7 +398,7 @@
         top: 2.8rem;
     }
 
-    .add-money-div{
+    .add-money-div {
         top: 10.38rem;
         left: 1.25rem;
         width: 8rem;
@@ -150,108 +406,124 @@
     }
 
     .add-money-div button,
-    .send-money-div button{
+    .send-money-div button {
         padding: 3px;
         background-color: rgba(255, 255, 255, 1);
     }
 
     .add-money-div button img,
-    .send-money-div button img{
+    .send-money-div button img {
         margin-top: -3px;
         width: 55%;
     }
 
-    .add-money-div button h5{
+    .add-money-div button h5 {
         font-weight: 500;
         font-size: 12px;
         line-height: 14px;
         color: rgba(0, 168, 89, 1);
     }
 
-    .send-money-div{
+    .send-money-div {
         top: 10.38rem;
         left: 14.63rem;
         width: 8.625rem;
     }
 
-    .send-money-div button h5{
+    .send-money-div button h5 {
         font-weight: 500;
         font-size: 12px;
         line-height: 14px;
         color: rgba(237, 50, 55, 1);
     }
 
-    .hr{
+    .hr {
         border-bottom: 1px solid #D9D9D9;
         /* background-color: rgba(217, 217, 217, 1); */
     }
 
-    .quick-access-div{
+    .quick-access-div {
         width: 90%;
     }
 
-    .quick-access-div h4{
+    .quick-access-div h4 {
         font-size: 16px;
         font-weight: 500;
         line-height: 19px;
     }
 
-    .quick-access-div h5{
+    .quick-access-div h5 {
         font-size: 16px;
         line-height: 19px;
         font-weight: 500;
         color: rgba(0, 175, 239, 1);
     }
 
-    .arrow2{
+    .arrow2 {
         margin-top: -6px;
     }
 
-    .links{
+    .links {
         width: 90%;
     }
 
-    .div-circle{
+    .div-circle {
         width: 3.5rem;
         height: 3.5rem;
     }
 
-    .links h5{
+    .links h5 {
         font-size: 14px;
         font-weight: 400;
         line-height: 16px;
     }
 
-    .link-div2{
+    .link-div2 {
         background-color: rgba(0, 175, 239, 1);
     }
 
-    .link-div3{
+    .link-div3 {
         background-color: rgba(255, 185, 5, 1);
     }
 
-    .link-div4{
+    .link-div4 {
         background-color: rgba(237, 50, 55, 1);
     }
 
-    .link-div5{
+    .link-div5 {
         background-color: rgba(0, 168, 89, 1);
     }
 
-    .link-div6{
+    .link-div6 {
         background-color: rgba(201, 0, 181, 1);
     }
 
-    .link-div7{
+    .link-div7 {
         background-color: rgba(151, 71, 255, 1);
     }
 
-    .link-div8{
+    .link-div8 {
         background-color: rgba(99, 50, 237, 1);
     }
 
-    .img-slider-div{
+    .img-slider-div {
         width: 90%;
         height: 14.25rem;
+    }
+
+    .footer {
+        bottom: 0;
+        height: 4.8rem;
+        border-top: 0.5px solid #D9D9D9;
+        background-color: rgba(255, 255, 255, 1);
+    }
+
+    .footer-inner{
+        width: 90%;
+    }
+
+    .round{
+        width: 2.5rem;
+        height: 2.5rem;
     }
 }
