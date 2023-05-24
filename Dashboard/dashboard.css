@@ -523,7 +523,20 @@ main {
     }
 
     .round{
-        width: 2.5rem;
-        height: 2.5rem;
+        width: 2.3rem;
+        height: 2.3rem;
     }
+
+    .footer-inner .home,
+    .footer-inner h6{
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 14px;
+        color: rgba(0, 168, 89, 1);
+    }
+
+    .footer-inner h6{
+        color: rgba(217, 217, 217, 1);
+    }
+
 }
