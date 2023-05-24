@@ -249,4 +249,9 @@
     .link-div8{
         background-color: rgba(99, 50, 237, 1);
     }
+
+    .img-slider-div{
+        width: 90%;
+        height: 14.25rem;
+    }
 }
