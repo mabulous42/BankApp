@@ -182,7 +182,8 @@
     }
 
     .hr{
-        background-color: rgba(217, 217, 217, 1);
+        border-bottom: 1px solid #D9D9D9;
+        /* background-color: rgba(217, 217, 217, 1); */
     }
 
     .quick-access-div{
@@ -204,5 +205,48 @@
 
     .arrow2{
         margin-top: -6px;
+    }
+
+    .links{
+        width: 90%;
+    }
+
+    .div-circle{
+        width: 3.5rem;
+        height: 3.5rem;
+    }
+
+    .links h5{
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 16px;
+    }
+
+    .link-div2{
+        background-color: rgba(0, 175, 239, 1);
+    }
+
+    .link-div3{
+        background-color: rgba(255, 185, 5, 1);
+    }
+
+    .link-div4{
+        background-color: rgba(237, 50, 55, 1);
+    }
+
+    .link-div5{
+        background-color: rgba(0, 168, 89, 1);
+    }
+
+    .link-div6{
+        background-color: rgba(201, 0, 181, 1);
+    }
+
+    .link-div7{
+        background-color: rgba(151, 71, 255, 1);
+    }
+
+    .link-div8{
+        background-color: rgba(99, 50, 237, 1);
     }
 }
