@@ -180,4 +180,25 @@
         line-height: 14px;
         color: rgba(237, 50, 55, 1);
     }
+
+    .quick-access-div{
+        width: 90%;
+    }
+
+    .quick-access-div h4{
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 19px;
+    }
+
+    .quick-access-div h5{
+        font-size: 16px;
+        line-height: 19px;
+        font-weight: 500;
+        color: rgba(0, 175, 239, 1);
+    }
+
+    .arrow2{
+        margin-top: -6px;
+    }
 }
