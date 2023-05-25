@@ -512,7 +512,7 @@ main {
     }
 
     .footer {
-        bottom: 0;
+        /* bottom: 0; */
         height: 4.8rem;
     }
     
