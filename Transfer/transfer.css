@@ -102,7 +102,7 @@
         background-color: rgba(0, 168, 89, 1);
         top: 0;
         right: 428px;
-        /* right: 0; */
+        right: 0;
         z-index: 9999;
         transition: all 0.5s ease;
     }
@@ -173,6 +173,10 @@
         border: 1px solid white;
     }
 
+    .keypad-border h3:hover{
+        background-color: rgba(0, 168, 89, 1);
+    }
+
     .narration-input{
         width: 90%;
         top: 45rem;
@@ -185,6 +189,21 @@
 
     .narration-input input::placeholder{
         color: rgba(217, 217, 217, 1);
+    }
+
+    .confirm-btn-div{
+        width: 90%;
+        top: 50rem;
+    }
+
+    .confirm-btn-div button{
+        height: 3.3rem;
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 28px;
+        color: rgba(255, 255, 255, 1);
+        background-color: inherit;
+        border: 1px solid white;
     }
 
 }
