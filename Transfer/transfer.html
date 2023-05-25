@@ -17,7 +17,7 @@
 </head>
 
 <body>
-    <main>
+    <main class="position-relative">
         <div class="transfer-header-div w-100 pb-2 mb-2">
             <div class="transfer-header mx-auto d-flex align-items-center justify-content-between py-3">
                 <div class="w-25">
@@ -33,7 +33,7 @@
             </div>
         </div>
         <div class="w-100">
-            <div class="bankEase-account rounded mx-auto mb-3 py-3">
+            <div class="bankEase-account rounded mx-auto mb-3 py-3" onclick="showTransferToBankEase()">
                 <div class="inner-bankEase mx-auto d-flex align-items-center justify-content-between">
                     <div class="d-flex align-items-center">
                         <div class="me-3">
@@ -49,75 +49,78 @@
                     </div>
                 </div>
             </div>
-            <div class="other-bankAccount rounded mx-auto py-3">
-                <div class="inner-bankEase mx-auto d-flex align-items-center justify-content-between">
-                    <div class="d-flex align-items-center">
-                        <div class="me-2 bank">
-                            <img src="../images/mdi_bank-circle.png" alt="" class="w-100">
-                        </div>
-                        <div class="mt-2">
-                            <h3>To Other Bank Accounts</h3>
-                            <h4>Transfers to other bank accounts are free</h4>
-                        </div>
+        </div>
+        <div class="other-bankAccount rounded mx-auto py-3">
+            <div class="inner-bankEase mx-auto d-flex align-items-center justify-content-between">
+                <div class="d-flex align-items-center">
+                    <div class="me-2 bank">
+                        <img src="../images/mdi_bank-circle.png" alt="" class="w-100">
                     </div>
-                    <div class="">
-                        <img src="../images/ic_round-keyboard-arrow-right.png" alt="" class="">
+                    <div class="mt-2">
+                        <h3>To Other Bank Accounts</h3>
+                        <h4>Transfers to other bank accounts are free</h4>
+                    </div>
+                </div>
+                <div class="">
+                    <img src="../images/ic_round-keyboard-arrow-right.png" alt="" class="">
+                </div>
+            </div>
+        </div>
+
+        <div class="w-100 d-flex align-items-center justify-content-center">
+            <div class="img-slider-div">
+                <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="../images/Property-1-Default.png" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="../images/Property-1-Variant2.png" class="d-block w-100" alt="...">
+                        </div>
                     </div>
                 </div>
             </div>
+        </div>
 
-            <div class="w-100 d-flex align-items-center justify-content-center">
-                <div class="img-slider-div">
-                    <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
-                        <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <img src="../images/Property-1-Default.png" class="d-block w-100" alt="...">
-                            </div>
-                            <div class="carousel-item">
-                                <img src="../images/Property-1-Variant2.png" class="d-block w-100" alt="...">
-                            </div>
+
+        <div class="footer fixed-bottom w-100 d-flex align-items-center justify-content-center">
+            <div class="footer-inner mt-2 d-flex mx-auto align-items-center justify-content-between">
+                <a href="../Dashboard/dashboard.html" class="a-link">
+                    <div>
+                        <div class="rounded-circle mx-auto  round d-flex align-items-center justify-content-center">
+                            <img src="../images/Frame37.png" alt="" class="w-100">
                         </div>
+                        <h6 class="text-center mt-1">Home</h6>
                     </div>
-                </div>
+                </a>
+                <a href="../Transfer/transfer.html" class="a-link">
+                    <div>
+                        <div class="mx-auto round d-flex align-items-center justify-content-center">
+                            <img src="../images/solar_round-transfer-horizontal-bold.png" alt="" class="w-100">
+                        </div>
+                        <h6 class="transfer text-center mt-1">Transfer</h6>
+                    </div>
+                </a>
+                <a href="#" class="a-link">
+                    <div>
+                        <div class="mx-auto round d-flex align-items-center justify-content-center">
+                            <img src="../images/material-symbols_credit-card.png" alt="" class="w-100">
+                        </div>
+                        <h6 class="text-center mt-1">Card</h6>
+                    </div>
+                </a>
+                <a href="#" class="a-link">
+                    <div>
+                        <div class="mx-auto round d-flex align-items-center justify-content-center">
+                            <img src="../images/uiw_setting.png" alt="" class="w-100">
+                        </div>
+                        <h6 class="text-center mt-1">Settings</h6>
+                    </div>
+                </a>
             </div>
+        </div>
 
-
-            <div class="footer fixed-bottom w-100 d-flex align-items-center justify-content-center">
-                <div class="footer-inner mt-2 d-flex mx-auto align-items-center justify-content-between">
-                    <a href="../Dashboard/dashboard.html" class="a-link">
-                        <div>
-                            <div class="rounded-circle mx-auto  round d-flex align-items-center justify-content-center">
-                                <img src="../images/Frame37.png" alt="" class="w-100">
-                            </div>
-                            <h6 class="text-center mt-1">Home</h6>
-                        </div>
-                    </a>
-                    <a href="../Transfer/transfer.html" class="a-link">
-                        <div>
-                            <div class="mx-auto round d-flex align-items-center justify-content-center">
-                                <img src="../images/solar_round-transfer-horizontal-bold.png" alt="" class="w-100">
-                            </div>
-                            <h6 class="transfer text-center mt-1">Transfer</h6>
-                        </div>
-                    </a>
-                    <a href="#" class="a-link">
-                        <div>
-                            <div class="mx-auto round d-flex align-items-center justify-content-center">
-                                <img src="../images/material-symbols_credit-card.png" alt="" class="w-100">
-                            </div>
-                            <h6 class="text-center mt-1">Card</h6>
-                        </div>
-                    </a>
-                    <a href="#" class="a-link">
-                        <div>
-                            <div class="mx-auto round d-flex align-items-center justify-content-center">
-                                <img src="../images/uiw_setting.png" alt="" class="w-100">
-                            </div>
-                            <h6 class="text-center mt-1">Settings</h6>
-                        </div>
-                    </a>
-                </div>
-            </div>
+        <div class="transfer-to-bankEase-account-div position-absolute w-100" id="bankEaseTransfer"></div>
     </main>
 
 
