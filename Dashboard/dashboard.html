@@ -49,7 +49,7 @@
                         </div>
                     </div>
                     <div class="position-absolute balance-div">
-                        <h2 id="current-balance">₦100,000.00</h2>
+                        <h2 id="current-balance">₦<span id="balance"></span></h2>
                         <h2 id="hide-current-balance">*****</h2>
                     </div>
                     <div class="position-absolute transaction-history-div d-flex align-items-center">
@@ -193,8 +193,8 @@
         <div class="mt-5">
             <button class="btn btn-danger" onclick="signOut()">Log Out</button>
         </div>
-        <div class="footer position-absolute w-100 shadow d-flex align-items-center justify-content-center">
-            <div class="footer-inner mt-2 d-flex align-items-center justify-content-between">
+        <div class="footer position-absolute w-100 d-flex align-items-center justify-content-center">
+            <div class="footer-inner mt-2 d-flex fixed-bottom mx-auto align-items-center justify-content-between">
                 <div>
                     <div class="rounded-circle mx-auto bg-success round d-flex align-items-center justify-content-center">
                         <img src="../images/bankeasep-1.png" alt="" class="w-50">

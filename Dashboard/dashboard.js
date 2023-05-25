@@ -16,6 +16,12 @@ console.log(customerName);
 //displaying the current customer first name on the dashboard
 document.getElementById("customer-name").innerHTML = customerName;
 
+//passing the current customer account balance into a variable
+let accountBalance = currentUser.accountBalance.toLocaleString();
+
+//displaying the current customer account balance on the dashboard
+document.getElementById("balance").innerHTML = accountBalance;
+
 //displaying the current customer account number
 document.getElementById("bankEase-account").innerHTML = currentUser.accountNumber;
 

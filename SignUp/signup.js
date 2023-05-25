@@ -98,7 +98,9 @@ signUpBtn.addEventListener("click", (ev) => {
         lastName: lastName.value,
         email: emailInput.value,
         phoneNumber: phoneNumber.value,
+        accountBalance: 100000.00,
         password: passwordInput.value,
+        transactionHistory: [],
         isHide: false
     }
 
