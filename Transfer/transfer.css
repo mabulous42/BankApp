@@ -56,6 +56,12 @@
         background-color: rgba(0, 175, 239, 1);
     }
 
+    .bank{
+        width: 3.5rem;
+        height: 3.5rem;
+        margin-left: -5px;
+    }
+
     .footer {
         /* bottom: 0; */
         height: 4.5rem;
