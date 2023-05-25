@@ -12,50 +12,62 @@
         width: 100vw;
         object-fit: contain;
     }
-}
 
-.transfer-header-div{
-    border-bottom: 0.5px solid #D9D9D9;
-}
+    .transfer-header-div {
+        border-bottom: 0.5px solid #D9D9D9;
+    }
 
-.transfer-header{
-    width: 90%;
-}
+    .transfer-header {
+        width: 90%;
+    }
 
-.transfer-header h5{
-    font-weight: 500;
-    font-size: 20px;
-    line-height: 23px;
-}
+    .transfer-header h5 {
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 23px;
+    }
 
-.footer {
-    /* bottom: 0; */
-    height: 4.5rem;
-}
+    .bankEase-account,
+    .other-bankAccount{
+        width: 90%;
+        height: 5.25rem;
+        background-color: rgba(0, 168, 89, 1);
+    }
 
-.footer-inner{
-    /* border-top: 0.5px solid #D9D9D9; */
-    background-color: rgba(255, 255, 255, 1);
-    width: 90%;
-}
+    .other-bankAccount{
+        background-color: rgba(0, 175, 239, 1);
+    }
 
-.round{
-    width: 2.1rem;
-    height: 2.1rem;
-}
+    .footer {
+        /* bottom: 0; */
+        height: 4.5rem;
+        border-top: 0.5px solid #D9D9D9;
+    }
 
-.footer-inner .transfer,
-.footer-inner h6{
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 14px;
-    color: rgba(0, 168, 89, 1);
-}
+    .footer-inner {
+        background-color: rgba(255, 255, 255, 1);
+        width: 90%;
+    }
 
-.footer-inner h6{
-    color: rgba(217, 217, 217, 1);
-}
+    .round {
+        width: 2.1rem;
+        height: 2.1rem;
+    }
 
-.a-link{
-    text-decoration: none;
+    .footer-inner .transfer,
+    .footer-inner h6 {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 14px;
+        color: rgba(0, 168, 89, 1);
+    }
+
+    .footer-inner h6 {
+        color: rgba(217, 217, 217, 1);
+    }
+
+    .a-link {
+        text-decoration: none;
+    }
+
 }
