@@ -30,7 +30,6 @@
     .bankEase-account,
     .other-bankAccount{
         width: 90%;
-        /* height: 5.25rem; */
         background-color: rgba(0, 168, 89, 1);
     }
 
@@ -104,8 +103,41 @@
         background-color: rgba(0, 168, 89, 1);
         top: 0;
         right: 428px;
+        /* right: 0; */
         z-index: 9999;
         transition: all 0.5s ease;
+    }
+
+    .transfer-bankease h5{
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 23px;
+    }
+
+    .recipient{
+        top: 6rem;
+        font-size: 18px;
+        line-height: 21px;
+    }
+
+    .enter-account{
+        top: 8.1rem;
+        width: 90%;
+    }
+
+    .enter-account input{
+        background-color: rgba(255, 255, 255, 1);
+        padding: 12px 0;
+        outline: none;
+    }
+
+    .enter-account input::placeholder{
+        color: rgba(217, 217, 217, 1);
+    }
+
+    .beneficiary{
+        top: 12.1rem;
+        left: 2.75rem;
     }
 
 }
