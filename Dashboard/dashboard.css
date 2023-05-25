@@ -513,7 +513,7 @@ main {
 
     .footer {
         /* bottom: 0; */
-        height: 4.8rem;
+        height: 4.5rem;
     }
     
     .footer-inner{
@@ -538,5 +538,10 @@ main {
     .footer-inner h6{
         color: rgba(217, 217, 217, 1);
     }
+
+    .a-link{
+        text-decoration: none;
+    }
+
 
 }
