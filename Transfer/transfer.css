@@ -30,8 +30,26 @@
     .bankEase-account,
     .other-bankAccount{
         width: 90%;
-        height: 5.25rem;
+        /* height: 5.25rem; */
         background-color: rgba(0, 168, 89, 1);
+    }
+
+    .inner-bankEase{
+        width: 90%;
+    }
+
+    .inner-bankEase h3{
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 21px;
+        color: rgba(255, 255, 255, 1);
+    }
+
+    .inner-bankEase h4{
+        color: rgba(255, 255, 255, 1);
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 14px;
     }
 
     .other-bankAccount{
