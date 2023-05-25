@@ -62,6 +62,12 @@
         margin-left: -5px;
     }
 
+    .img-slider-div {
+        width: 90%;
+        height: 14.25rem;
+        margin-top: 20rem;
+    }
+
     .footer {
         /* bottom: 0; */
         height: 4.5rem;
