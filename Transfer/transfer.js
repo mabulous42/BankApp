@@ -3,6 +3,8 @@ let bankEnterWithKeyPad = document.getElementById("enter-amount-for-bank");
 let displayOtherBankAmount = document.getElementById("otherBank-transfer-amount");
 let confirmPage = document.getElementById("confirmation-page");
 
+let allBankEaseUser = JSON.parse(localStorage.getItem("customers"));
+
 //this function takes the user back to the dashboard page
 function gotoDashboard() {
     window.location.href = "../Dashboard/dashboard.html";
@@ -23,16 +25,36 @@ function gotoTransfer() {
     window.location.href = "transfer.html";
 }
 
+let inputBankEaseAccountNumber = document.getElementById("input-accountNumber");
+let verificationDisplay = document.getElementById("display-verification-result");
+verificationDisplay.style.display = "none";
+function verifyAccountNumber() {
+    if (inputBankEaseAccountNumber.value.length == 10) {
+        let validAccount = allBankEaseUser.find(user => user.accountNumber == inputBankEaseAccountNumber.value);
+        if (validAccount) {
+            setTimeout(() => {
+                verificationDisplay.style.display = "block";
+                console.log(validAccount);                
+            }, 1000);
+        } else {
+            setTimeout(() => {
+                verificationDisplay.style.display = "block";
+                console.log("Account details verification failed, check the details and try again");
+            }, 1000);
+        }
+    }
+}
+
 //getting the id of the screen that displays the transfer amount
 let transferAmount = document.getElementById("transfer-amount");
 
- 
+
 //global function that displays number(parameter) on the screen
 function generalDisplay(num, displayTag) {
     displayTag.innerHTML += num
     let formattedNum = displayTag.innerHTML;
     addCommasToNumber(formattedNum)
-    displayTag.innerHTML += addCommasToNumber(formattedNum); 
+    displayTag.innerHTML += addCommasToNumber(formattedNum);
     console.log(addCommasToNumber(formattedNum));
 }
 
@@ -51,7 +73,7 @@ function showNumber(num) {
 //a global function that deletes number
 function globalDelete(displayTag) {
     let display = displayTag.innerHTML;
-    displayTag.innerHTML = display.slice(0, displayTag.innerHTML.length - 1);    
+    displayTag.innerHTML = display.slice(0, displayTag.innerHTML.length - 1);
 }
 
 //to delete a number
@@ -61,7 +83,7 @@ function del() {
 
 //to delete a number
 function delOtherBank() {
-    globalDelete(displayOtherBankAmount);    
+    globalDelete(displayOtherBankAmount);
 }
 
 //this function adds comma(,) to the number after each 3 digits
@@ -75,7 +97,7 @@ function addCommasToNumber(num) {
 function gotoConfirmationPage() {
     confirmPage.style.display = "block";
     setTimeout(() => {
-        confirmPage.style.bottom = "0px";        
+        confirmPage.style.bottom = "0px";
     }, 250);
 }
 
@@ -83,12 +105,17 @@ function gotoConfirmationPage() {
 function goBack() {
     confirmPage.style.display = "none";
 }
+
 let transactionPinPage = document.getElementById('enter-transaction-pin');
 function gotoEnterTransferPin() {
     transactionPinPage.style.display = "block";
     setTimeout(() => {
-        transactionPinPage.style.bottom = "0px";        
+        transactionPinPage.style.bottom = "0px";
     }, 250);
+}
+
+function closeModal() {
+    transactionPinPage.style.display = "none";
 }
 
 //this function moves the focus from the current input to the nextinput on input event
@@ -104,7 +131,7 @@ function moveToNext(currentInput, nextInputId) {
 // function validatesPin() {
 //     let pinDigits = '';
 //     let pinInputs = document.querySelectorAll('input[type="number"]');
-  
+
 //     for (let i = 0; i < pinInputs.length; i++) {
 //       if (pinInputs[i].value === '') {
 //         // Empty field found, display an error message or handle the validation failure
@@ -113,8 +140,12 @@ function moveToNext(currentInput, nextInputId) {
 //       }
 //       pinDigits += pinInputs[i].value;
 //     }
-    
-  
+
+
 //     // All PIN digits are filled, proceed with further actions
 //     console.log('PIN entered:', pinDigits);
 // }
+
+document.getElementById("passDigit4").addEventListener('input', () => {
+    document.getElementById('successful-div').style.display = "block";
+})

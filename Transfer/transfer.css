@@ -102,7 +102,7 @@
         background-color: rgba(0, 168, 89, 1);
         top: 0;
         right: 428px;
-        right: 0;
+        /* right: 0; */
         z-index: 9999;
         transition: all 1s ease;
     }
@@ -237,9 +237,17 @@
         width: 90%;
     }
 
+    .transfer-confirmation-outer-div{
+        background-color: rgba(0, 0, 0, 0.534);
+        height: 100vh;
+        top: 0;
+        display: none;
+    }
+
     .transfer-confirmation-div{
         bottom: -30vh;
-        display: none;
+        bottom: 0;
+        /* display: none; */
         transition: all 0.5s linear;
     }
 
@@ -281,10 +289,16 @@
         color: rgba(237, 50, 55, 1);
     }
 
+    .transaction-pin-outer-div{
+        height: 100vh;
+        top: 0;
+        background-color: rgba(0, 0, 0, 0.616);
+        display: none;
+    }
+
     .transaction-pin{
         bottom: 0;
-        bottom: -30vh;        
-        display: none;
+        /* bottom: -30vh;         */
         transition: all 0.5s linear;
         background-color: white;
     }
@@ -300,7 +314,6 @@
         text-align: center;
         outline: none;
         border: 1px solid #00A859;
-        /* font-size: 50px; */
     }
 
     .forgetPin{
@@ -308,6 +321,46 @@
         font-weight: 400;
         font-size: 18px;
         line-height: 21px;
+    }
+
+    .keyboard{
+        height: 21.5rem;
+        /* padding: 5px; */
+        background-color: rgba(209, 210, 216, 1);
+    }
+
+    .keyboard input{
+        width: 8.5rem;
+        height: 3.5rem;
+        background-color: white;
+        font-size: 24px;
+        font-weight: 400;
+        line-height: 29px;
+    }
+
+    .invisible{
+        background-color: rgba(209, 210, 216, 1);
+    }
+
+    .backspace{
+        width: 8.5rem;
+        height: 3.5rem;
+    }
+
+    .del{
+        width: 20%;
+    }
+
+    .transfer-successful-div{
+        top: 0;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.541);
+        display: none;
+    }
+
+    .successful{
+        height: 80vh;
+        bottom: 0;
     }
 
 }
