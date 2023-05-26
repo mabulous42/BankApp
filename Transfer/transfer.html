@@ -231,6 +231,23 @@
                         <button type="submit" class="no-btn py-1 rounded" onclick="goBack()">No</button>
                     </div>
                 </div>
+                <div class="transaction-pin position-absolute py-5 w-100 rounded-top-5">
+                    <div class="w-100 position-relative">
+                        <div class="w-25 close position-absolute text-end me-2">
+                            <img src="../images/close-icon.png" alt="" class="w-25">
+                        </div>
+                    </div>
+                    
+                    <div class="mt-5 text-center">
+                        <h4 class="mb-4">Enter Transaction Pin</h4>
+                        <input type="password" name="" id="passDigit1" class="rounded-circle me-2" maxlength="1" oninput="moveToNext(this, 'passDigit2')" required>
+                        <input type="password" name="" id="passDigit2" class="rounded-circle me-2" maxlength="1" oninput="moveToNext(this, 'passDigit3')" required>
+                        <input type="password" name="" id="passDigit3" class="rounded-circle me-2" maxlength="1" oninput="moveToNext(this, 'passDigit4')" required>
+                        <input type="password" name="" id="passDigit4" class="rounded-circle" maxlength="1" required>
+                    </div>
+                    <h4 class="text-center forgetPin">Forget Transaction Pin?</h4>
+                    <div class="keyboard"></div>
+                </div>
             </div>
         </div>
 
