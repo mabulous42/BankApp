@@ -12,16 +12,22 @@ function gotoTransfer() {
 }
 
 let transferAmount = document.getElementById("transfer-amount");
-let amount = 1000000;
+// let amount = 1000000;
 // transferAmount.innerHTML = amount.toLocaleString();
 // transferAmount.innerHTML.toLocaleString();
 
 function displayNumber(num) {
     enterWithKeyPad.style.display = "none";
-    transferAmount.innerHTML += Number(num).toLocaleString();
+    transferAmount.innerHTML += Number(num);
+    let amount = transferAmount.innerHTML;
+    console.log(amount.toLocaleString());
+    let finalAmount = amount.substring(0,amount.length).toLocaleString();
+    console.log("final amount"+ finalAmount);
+    // transferAmount.innerHTML = amount.toLocaleString();
     // transferAmount.innerHTML.toLocaleString();
 }
 
 function del() {
-    transferAmount.innerHTML.slice(0,-1);
+    let display = transferAmount.innerHTML;
+    transferAmount.innerHTML = display.slice(0,transferAmount.innerHTML.length-1);
 }
