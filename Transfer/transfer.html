@@ -227,11 +227,11 @@
                     </div>
                     <h2 class="mb-4">to <span>Abiodun Yetunde</span> - BankEase</h2>
                     <div class="confirmation-button mx-auto w-100 d-flex align-items-center justify-content-center">
-                        <button type="submit" class="yes-btn me-3 py-1 rounded">Yes</button>
+                        <button type="submit" class="yes-btn me-3 py-1 rounded" onclick="gotoEnterTransferPin()">Yes</button>
                         <button type="submit" class="no-btn py-1 rounded" onclick="goBack()">No</button>
                     </div>
                 </div>
-                <div class="transaction-pin position-absolute py-5 w-100 rounded-top-5">
+                <div class="transaction-pin position-absolute py-5 w-100 rounded-top-5" id="enter-transaction-pin">
                     <div class="w-100 position-relative">
                         <div class="w-25 close position-absolute text-end me-2">
                             <img src="../images/close-icon.png" alt="" class="w-25">

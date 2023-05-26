@@ -83,6 +83,13 @@ function gotoConfirmationPage() {
 function goBack() {
     confirmPage.style.display = "none";
 }
+let transactionPinPage = document.getElementById('enter-transaction-pin');
+function gotoEnterTransferPin() {
+    transactionPinPage.style.display = "block";
+    setTimeout(() => {
+        transactionPinPage.style.bottom = "0px";        
+    }, 250);
+}
 
 //this function moves the focus from the current input to the nextinput on input event
 function moveToNext(currentInput, nextInputId) {
