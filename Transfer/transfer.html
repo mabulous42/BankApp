@@ -133,84 +133,90 @@
                     <div class="text-end">
                         <img src="../images/bell-white.png" alt="" class="w-75">
                     </div>
-                    <h3 class="position-absolute recipient">Recipient Account</h3>
-                    <div class="position-absolute enter-account">
+                </div>
+                <div class="inner-content-div mx-auto">
+                    <h3 class="recipient mb-3">Recipient Account</h3>
+                    <div class="enter-account w-100 mb-2">
                         <input type="number" name="" id="" class="w-100 rounded ps-4"
                             placeholder="Enter BankEase account number">
                     </div>
-                    <h6 class="position-absolute beneficiary">Select from Beneficiaries</h6>
-                    <div class="transfer-amount-div position-absolute d-flex align-items-center justify-content-center">
-                        <div>
-                            <div class="w-100 d-flex align-items-center justify-content-center">
-                                <div class="naira rounded-circle shadow me-2 text-center">
+                    <h6 class="w-100 beneficiary mb-3">Select from Beneficiaries</h6>
+                    <div class="show-account-name w-100 mb-5">
+                        <input type="text" name="" id="" value="Mustapha Abbas" class="w-100 py-2 ps-3 mb-2 rounded" disabled>
+                    </div>
+                    <div class="transfer-amount-div w-100 d-flex align-items-center justify-content-center">
+                        <div class="w-100">
+                            <div class=" mb-3 w-100 d-flex align-items-center justify-content-center">
+                                <div class="naira rounded-circle shadow me-2 text-center mb-3">
                                     <h3 class="my-1">₦</h3>
                                 </div>
                                 <h4 id="transfer-amount"></h4>
                             </div>
-                            <h6 class="mt-5" id="enter-amount">Enter amount with the keypad</h6>
+                            <h6 class="w-100 text-center" id="enter-amount">Enter amount with the keypad</h6>
                         </div>
                     </div>
-                    <div class="position-absolute keypad-div mx-auto">
-                        <div class="w-75 mx-auto keypad d-flex align-items-center justify-content-between flex-wrap">
-                            <div
-                                class="me-5 mb-4 keypad-border rounded-circle text-center d-flex align-items-center justify-content-center">
-                                <h3 class="mt-1" onclick="displayNumber(1)">1</h3>
-                            </div>
-                            <div
-                                class="me-5 mb-4 keypad-border rounded-circle text-center d-flex align-items-center justify-content-center">
-                                <h3 class="mt-1" onclick="displayNumber(2)">2</h3>
-                            </div>
-                            <div
-                                class="mb-4 keypad-border rounded-circle text-center d-flex align-items-center justify-content-center">
-                                <h3 class="mt-1" onclick="displayNumber(3)">3</h3>
-                            </div>
-                            <div
-                                class="me-5 mb-4 keypad-border rounded-circle text-center d-flex align-items-center justify-content-center">
-                                <h3 class="mt-1" onclick="displayNumber(4)">4</h3>
-                            </div>
-                            <div
-                                class="me-5 mb-4 keypad-border rounded-circle text-center d-flex align-items-center justify-content-center">
-                                <h3 class="mt-1" onclick="displayNumber(5)">5</h3>
-                            </div>
-                            <div
-                                class="mb-4 keypad-border rounded-circle text-center d-flex align-items-center justify-content-center">
-                                <h3 class="mt-1" onclick="displayNumber(6)">6</h3>
-                            </div>
-                            <div
-                                class="me-5 mb-4 keypad-border rounded-circle text-center d-flex align-items-center justify-content-center">
-                                <h3 class="mt-1" onclick="displayNumber(7)">7</h3>
-                            </div>
-                            <div
-                                class="me-5 mb-4 keypad-border rounded-circle text-center d-flex align-items-center justify-content-center">
-                                <h3 class="mt-1" onclick="displayNumber(8)">8</h3>
-                            </div>
-                            <div
-                                class="mb-4 keypad-border rounded-circle text-center d-flex align-items-center justify-content-center">
-                                <h3 class="mt-1" onclick="displayNumber(9)">9</h3>
-                            </div>
-                            <div
-                                class="me-5 mb-4 keypad-border rounded-circle text-center d-flex align-items-center justify-content-center">
-                                <h3 class="mt-2" onclick="displayNumber('*')">*</h3>
-                            </div>
-                            <div
-                                class="me-5 mb-4 keypad-border rounded-circle text-center d-flex align-items-center justify-content-center">
-                                <h3 class="mt-1" onclick="displayNumber(0)">0</h3>
-                            </div>
-                            <div
-                                class="mb-4 keypad-border rounded-circle text-center d-flex align-items-center justify-content-center">
-                                <img src="../images/material-symbols_arrow-back-ios-new-rounded-white.png" alt=""
-                                    class="w-50" onclick="del()">
+                        <div class="position-absolute keypad-div mx-auto mt-5">
+                            <div class="w-75 mx-auto keypad d-flex align-items-center justify-content-between flex-wrap">
+                                <div
+                                    class="me-5 mb-4 keypad-border rounded-circle text-center d-flex align-items-center justify-content-center">
+                                    <h3 class="mt-1" onclick="displayNumber(1)">1</h3>
+                                </div>
+                                <div
+                                    class="me-5 mb-4 keypad-border rounded-circle text-center d-flex align-items-center justify-content-center">
+                                    <h3 class="mt-1" onclick="displayNumber(2)">2</h3>
+                                </div>
+                                <div
+                                    class="mb-4 keypad-border rounded-circle text-center d-flex align-items-center justify-content-center">
+                                    <h3 class="mt-1" onclick="displayNumber(3)">3</h3>
+                                </div>
+                                <div
+                                    class="me-5 mb-4 keypad-border rounded-circle text-center d-flex align-items-center justify-content-center">
+                                    <h3 class="mt-1" onclick="displayNumber(4)">4</h3>
+                                </div>
+                                <div
+                                    class="me-5 mb-4 keypad-border rounded-circle text-center d-flex align-items-center justify-content-center">
+                                    <h3 class="mt-1" onclick="displayNumber(5)">5</h3>
+                                </div>
+                                <div
+                                    class="mb-4 keypad-border rounded-circle text-center d-flex align-items-center justify-content-center">
+                                    <h3 class="mt-1" onclick="displayNumber(6)">6</h3>
+                                </div>
+                                <div
+                                    class="me-5 mb-4 keypad-border rounded-circle text-center d-flex align-items-center justify-content-center">
+                                    <h3 class="mt-1" onclick="displayNumber(7)">7</h3>
+                                </div>
+                                <div
+                                    class="me-5 mb-4 keypad-border rounded-circle text-center d-flex align-items-center justify-content-center">
+                                    <h3 class="mt-1" onclick="displayNumber(8)">8</h3>
+                                </div>
+                                <div
+                                    class="mb-4 keypad-border rounded-circle text-center d-flex align-items-center justify-content-center">
+                                    <h3 class="mt-1" onclick="displayNumber(9)">9</h3>
+                                </div>
+                                <div
+                                    class="me-5 mb-4 keypad-border rounded-circle text-center d-flex align-items-center justify-content-center">
+                                    <h3 class="mt-2" onclick="displayNumber('*')">*</h3>
+                                </div>
+                                <div
+                                    class="me-5 mb-4 keypad-border rounded-circle text-center d-flex align-items-center justify-content-center">
+                                    <h3 class="mt-1" onclick="displayNumber(0)">0</h3>
+                                </div>
+                                <div
+                                    class="mb-4 keypad-border rounded-circle text-center d-flex align-items-center justify-content-center">
+                                    <img src="../images/material-symbols_arrow-back-ios-new-rounded-white.png" alt=""
+                                        class="w-50" onclick="del()">
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="position-absolute narration-input bg-danger">
-                        <input type="number" name="" id="" class="w-100 rounded ps-4"
-                            placeholder="What is it for?">
-                    </div>
-                    <div class="confirm-btn-div position-absolute">
-                        <button type="submit" class="w-100 rounded">Confirm</button>
-                    </div>
+                        <div class="position-absolute narration-input bg-danger">
+                            <input type="number" name="" id="" class="w-100 rounded ps-4" placeholder="What is it for?">
+                        </div>
+                        <div class="position-absolute confirm-btn-div">
+                            <button type="submit" class="w-100 rounded">Confirm</button>
+                        </div>
+                    
                 </div>
+
             </div>
         </div>
 
@@ -222,7 +228,7 @@
                             onclick="gotoTransfer()">
                     </div>
                     <div class="w-100 text-center transfer-bankease">
-                        <h5 class="mt-1 w-100">Transfer to Other Bank Account</h5>
+                        <h5 class="mt-1 w-100">Transfer to Bank Account</h5>
                     </div>
                     <div class="text-end">
                         <img src="../images/bell-white.png" alt="" class="w-75">
@@ -230,9 +236,14 @@
                     <h3 class="position-absolute recipient">Recipient Account</h3>
                     <div class="position-absolute enter-account">
                         <input type="number" name="" id="" class="w-100 rounded ps-4"
-                            placeholder="Enter BankEase account number">
+                            placeholder="Enter bank account number">
                     </div>
                     <h6 class="position-absolute beneficiary">Select from Beneficiaries</h6>
+                    <div class="position-absolute select-bank">
+                        <select name="" id="" class="w-50">
+                            <option value="">Select Bank</option>
+                        </select>
+                    </div>
                     <div class="transfer-amount-div position-absolute d-flex align-items-center justify-content-center">
                         <div>
                             <div class="w-100 d-flex align-items-center justify-content-center">
@@ -298,8 +309,7 @@
                         </div>
                     </div>
                     <div class="position-absolute narration-input bg-danger">
-                        <input type="number" name="" id="" class="w-100 rounded ps-4"
-                            placeholder="What is it for?">
+                        <input type="number" name="" id="" class="w-100 rounded ps-4" placeholder="What is it for?">
                     </div>
                     <div class="confirm-btn-div position-absolute">
                         <button type="submit" class="w-100 rounded">Confirm</button>

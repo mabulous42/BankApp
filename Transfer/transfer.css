@@ -102,7 +102,7 @@
         background-color: rgba(0, 168, 89, 1);
         top: 0;
         right: 428px;
-        /* right: 0; */
+        right: 0;
         z-index: 9999;
         transition: all 1s ease;
     }
@@ -111,6 +111,10 @@
         font-weight: 500;
         font-size: 20px;
         line-height: 23px;
+    }
+
+    .inner-content-div{
+        width: 90%;
     }
 
     .recipient{
@@ -139,9 +143,17 @@
         left: 2.75rem;
     }
 
-    .transfer-amount-div{
-        top: 16rem;
+    .show-account-name{
+        top: 13.5rem;
         width: 90%;
+    }
+
+    .show-account-name input{
+        background-color: white;
+    }
+
+    .transfer-amount-div{
+        top: 18rem;
     }
 
     .transfer-amount-div h4{
@@ -162,7 +174,7 @@
     }
 
     .keypad-div{
-        top: 24.5rem;
+        top: 22.5rem;
         width: 90%;
         height: 17rem;
     }
@@ -211,8 +223,14 @@
         background-color: rgba(0, 175, 239, 1);
         top: 0;
         right: 428px;
+        /* right: 0; */
         z-index: 99991;
         transition: all 1s ease;
+    }
+
+    .select-bank{
+        top: 14rem;
+        width: 90%;
     }
 
 }
