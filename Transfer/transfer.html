@@ -138,12 +138,13 @@
                     <div class="inner-content-div mx-auto">
                         <h3 class="recipient mb-3">Recipient Account</h3>
                         <div class="enter-account w-100 mb-2">
-                            <input type="number" name="" id="input-accountNumber" class="w-100 rounded ps-4"
+                            <input type="number" name="" maxlength="10" id="input-accountNumber" class="w-100 rounded ps-4"
                                 placeholder="Enter BankEase account number" oninput="verifyAccountNumber()">
                         </div>
                         <h6 class="w-100 beneficiary mb-3">Select from Beneficiaries</h6>
                         <div class="show-account-name w-100 mb-5">
-                            <input type="text" name="" id="display-verification-result" value="Mustapha Abbas" class="w-100 py-2 ps-3 mb-2 rounded"
+                            <textarea name="" id="display-verification-result-notfound" value="Mustapha Abbas" cols="30" rows="2" class="w-100 py-2 ps-3 mb-2 rounded" disabled></textarea>
+                            <input type="text" name="" id="display-verification-result-found" value="Mustapha Abbas" class="w-100 py-2 ps-3 mb-2 rounded"
                                 disabled>
                         </div>
                         <div class="transfer-amount-div w-100 d-flex align-items-center justify-content-center">

@@ -26,22 +26,32 @@ function gotoTransfer() {
 }
 
 let inputBankEaseAccountNumber = document.getElementById("input-accountNumber");
-let verificationDisplay = document.getElementById("display-verification-result");
-verificationDisplay.style.display = "none";
+let verificationDisplayNotFound = document.getElementById("display-verification-result-notfound");
+let verificationDisplayFound = document.getElementById("display-verification-result-found");
+verificationDisplayFound.style.display = "none";
+verificationDisplayNotFound.style.display = "none";
 function verifyAccountNumber() {
     if (inputBankEaseAccountNumber.value.length == 10) {
         let validAccount = allBankEaseUser.find(user => user.accountNumber == inputBankEaseAccountNumber.value);
         if (validAccount) {
             setTimeout(() => {
-                verificationDisplay.style.display = "block";
-                console.log(validAccount);                
+                verificationDisplayFound.style.display = "block";
+                verificationDisplayFound.value = validAccount.firstName.toUpperCase() + " " + validAccount.lastName.toUpperCase();
+                console.log(validAccount);
             }, 1000);
         } else {
             setTimeout(() => {
-                verificationDisplay.style.display = "block";
-                console.log("Account details verification failed, check the details and try again");
+                verificationDisplayNotFound.style.display = "block";
+                verificationDisplayNotFound.value = "Account details verification failed, check the details and try again";
             }, 1000);
         }
+    } 
+    else if (inputBankEaseAccountNumber.value.length < 10) {
+        verificationDisplayFound.style.display = "none";      
+        verificationDisplayNotFound.style.display = "none";      
+    }
+    else if (inputBankEaseAccountNumber.value > 10) {
+        inputBankEaseAccountNumber.value = inputBankEaseAccountNumber.value.slice(0, 10);
     }
 }
 

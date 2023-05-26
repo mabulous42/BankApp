@@ -152,8 +152,18 @@
         width: 90%;
     }
 
+    .show-account-name textarea,
     .show-account-name input{
         background-color: white;
+        display: block;
+        box-sizing: border-box;
+        color: red;
+    }
+
+    .show-account-name input{
+        color: black;
+        font-weight: 500;
+        font-size: 20px;
     }
 
     .transfer-amount-div{
