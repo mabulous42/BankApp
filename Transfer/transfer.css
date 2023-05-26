@@ -102,9 +102,13 @@
         background-color: rgba(0, 168, 89, 1);
         top: 0;
         right: 428px;
-        /* right: 0; */
+        right: 0;
         z-index: 9999;
         transition: all 1s ease;
+    }
+
+    .transfer-to-bankEase-account-div-inner{
+        height: 100%;
     }
 
     .transfer-bankease h5{
@@ -231,6 +235,50 @@
     .select-bank{
         top: 14rem;
         width: 90%;
+    }
+
+    .transfer-confirmation-div{
+        bottom: -30vh;
+        display: none;
+        transition: all 0.5s linear;
+    }
+
+    .are-you-sure{
+        text-align: center;
+        font-size: 16px;
+        line-height: 19px;
+        font-weight: 400;
+    }
+
+    .transfer-confirmation-div h3{
+        font-weight: 800;
+        font-size: 36px;
+        line-height: 42px;
+    }
+
+    .transfer-confirmation-div h2{
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 19px;
+        color: rgba(0, 168, 89, 1);
+        text-align: center;
+    }
+
+    .yes-btn,
+    .no-btn{
+        width: 40%;
+        font-weight: 500;
+        font-size: 22px;
+        line-height: 28px;
+        text-align: center;
+        color: white;
+        background-color: rgba(0, 168, 89, 1);
+    }
+
+    .no-btn{
+        background-color: white;
+        border: 1px solid rgba(237, 50, 55, 1);
+        color: rgba(237, 50, 55, 1);
     }
 
 }
