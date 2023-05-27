@@ -143,7 +143,7 @@
                         </div>
                         <h6 class="w-100 beneficiary mb-3">Select from Beneficiaries</h6>
                         <div class="show-account-name w-100 mb-5">
-                            <textarea name="" id="display-verification-result-notfound" value="Mustapha Abbas" cols="30" rows="2" class="w-100 py-2 ps-3 mb-2 rounded" disabled></textarea>
+                            <textarea name="" id="display-verification-result-notfound" value="" cols="30" rows="2" class="w-100 py-2 ps-3 mb-2 rounded" disabled></textarea>
                             <input type="text" name="" id="display-verification-result-found" value="Mustapha Abbas" class="w-100 py-2 ps-3 mb-2 rounded"
                                 disabled>
                         </div>
@@ -198,8 +198,8 @@
                                     <h3 class="mt-1" onclick="displayNumber(9)">9</h3>
                                 </div>
                                 <div
-                                    class="me-5 mb-4 keypad-border rounded-circle text-center d-flex align-items-center justify-content-center">
-                                    <h3 class="mt-2" onclick="displayNumber('*')">*</h3>
+                                    class="me-5 mb-4 keypad-border rounded-circle border-0 text-center d-flex align-items-center justify-content-center">
+                                    <h3 class="mt-2" onclick="displayNumber('')"></h3>
                                 </div>
                                 <div
                                     class="me-5 mb-4 keypad-border rounded-circle text-center d-flex align-items-center justify-content-center">
@@ -215,8 +215,8 @@
                         <div class="position-absolute narration-input bg-danger">
                             <input type="number" name="" id="" class="w-100 rounded ps-4" placeholder="What is it for?">
                         </div>
-                        <div class="position-absolute confirm-btn-div" onclick="gotoConfirmationPage()">
-                            <button type="submit" class="w-100 rounded">Confirm</button>
+                        <div class="position-absolute confirm-btn-div">
+                            <button type="submit" id="transfer-btn" class="w-100 rounded" onclick="gotoConfirmationPage()">Confirm</button>
                         </div>
 
                     </div>
@@ -227,9 +227,9 @@
                         <h6 class="are-you-sure">Are you sure you want to send</h6>
                         <div class="d-flex align-items-center justify-content-center text-center w-100 mx-auto">
                             <h4 class="me-1 fs-1">₦</h4>
-                            <h3>5,000</h3>
+                            <h3 id="amount-to-transfer"></h3>
                         </div>
-                        <h2 class="mb-4">to <span>Abiodun Yetunde</span> - BankEase</h2>
+                        <h2 class="mb-4">to <span id="account-details">Abiodun Yetunde</span> - BankEase</h2>
                         <div class="confirmation-button mx-auto w-100 d-flex align-items-center justify-content-center">
                             <button type="submit" class="yes-btn me-3 py-1 rounded"
                                 onclick="gotoEnterTransferPin()">Yes</button>

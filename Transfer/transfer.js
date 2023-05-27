@@ -28,16 +28,28 @@ function gotoTransfer() {
 let inputBankEaseAccountNumber = document.getElementById("input-accountNumber");
 let verificationDisplayNotFound = document.getElementById("display-verification-result-notfound");
 let verificationDisplayFound = document.getElementById("display-verification-result-found");
+
+let transferButton = document.getElementById("transfer-btn");
+let amountTag = document.getElementById("amount-to-transfer");
+let accountDetailsTag = document.getElementById("account-details");
+
+//display none the elements
 verificationDisplayFound.style.display = "none";
 verificationDisplayNotFound.style.display = "none";
+
+let beneficiary;
+
+//this function checks if the account exist or not before proced=eding with the transaction
 function verifyAccountNumber() {
     if (inputBankEaseAccountNumber.value.length == 10) {
-        let validAccount = allBankEaseUser.find(user => user.accountNumber == inputBankEaseAccountNumber.value);
-        if (validAccount) {
+
+        let beneficiary = allBankEaseUser.find(user => user.accountNumber == inputBankEaseAccountNumber.value);
+
+        if (beneficiary) {
             setTimeout(() => {
                 verificationDisplayFound.style.display = "block";
-                verificationDisplayFound.value = validAccount.firstName.toUpperCase() + " " + validAccount.lastName.toUpperCase();
-                console.log(validAccount);
+                verificationDisplayFound.value = beneficiary.firstName.toUpperCase() + " " + beneficiary.lastName.toUpperCase();
+                console.log(beneficiary);
             }, 1000);
         } else {
             setTimeout(() => {
@@ -45,10 +57,10 @@ function verifyAccountNumber() {
                 verificationDisplayNotFound.value = "Account details verification failed, check the details and try again";
             }, 1000);
         }
-    } 
+    }
     else if (inputBankEaseAccountNumber.value.length < 10) {
-        verificationDisplayFound.style.display = "none";      
-        verificationDisplayNotFound.style.display = "none";      
+        verificationDisplayFound.style.display = "none";
+        verificationDisplayNotFound.style.display = "none";
     }
     else if (inputBankEaseAccountNumber.value > 10) {
         inputBankEaseAccountNumber.value = inputBankEaseAccountNumber.value.slice(0, 10);
@@ -62,11 +74,17 @@ let transferAmount = document.getElementById("transfer-amount");
 //global function that displays number(parameter) on the screen
 function generalDisplay(num, displayTag) {
     displayTag.innerHTML += num
-    let formattedNum = displayTag.innerHTML;
-    addCommasToNumber(formattedNum)
-    displayTag.innerHTML += addCommasToNumber(formattedNum);
-    console.log(addCommasToNumber(formattedNum));
+    //checking to make sure that transfer amount is 100 and above which is 3 digits and above
+    if (transferAmount.innerHTML.length >= 3) {
+        console.log("yes");
+        transferButton.disabled = false 
+    } else {
+        transferButton.disabled = true;
+    }
 }
+
+//disbling the confirm transfer button to make sure the amount is atleast 100 before proceeding with the transaction
+transferButton.disabled = true;
 
 //displaying number(parameter) on the screen
 function displayNumber(num) {
@@ -84,6 +102,13 @@ function showNumber(num) {
 function globalDelete(displayTag) {
     let display = displayTag.innerHTML;
     displayTag.innerHTML = display.slice(0, displayTag.innerHTML.length - 1);
+    //checking to make sure that transfer amount is 100 and above which is 3 digits and above
+    if (transferAmount.innerHTML.length >= 3) {
+        console.log("yes");
+        transferButton.disabled = false 
+    } else {
+        transferButton.disabled = true;
+    }
 }
 
 //to delete a number
@@ -97,18 +122,24 @@ function delOtherBank() {
 }
 
 //this function adds comma(,) to the number after each 3 digits
-function addCommasToNumber(num) {
-    const parts = num.toString().split(".");
-    parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-    return parts.join(".");
-}
+// function addCommasToNumber(num) {
+//     const parts = num.toString().split(".");
+//     parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+//     return parts.join(".");
+// }
+
 
 //this function pops out the confirmation page for the user to confirm if he/she actually wants to proceed with the transction
 function gotoConfirmationPage() {
-    confirmPage.style.display = "block";
-    setTimeout(() => {
-        confirmPage.style.bottom = "0px";
-    }, 250);
+    console.log("active");
+    // confirmPage.style.display = "block";
+    // setTimeout(() => {
+    //     confirmPage.style.bottom = "0px";
+    // }, 250);
+    // console.log(transferAmount.innerHTML.length);
+    // amountTag.innerHTML = transferAmount.innerHTML;
+    // accountDetailsTag.innerHTML = allBankEaseUser.firstName + " " + allBankEaseUser.lastName
+    // console.log(transferAmount.length);
 }
 
 //this function returns the user back to the transfer page 
