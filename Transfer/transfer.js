@@ -38,6 +38,7 @@ verificationDisplayFound.style.display = "none";
 verificationDisplayNotFound.style.display = "none";
 
 let beneficiary;
+let recipient = JSON.parse(localStorage.getItem('beneficiary')) || [];
 
 //this function checks if the account exist or not before proced=eding with the transaction
 function verifyAccountNumber() {
@@ -57,6 +58,7 @@ function verifyAccountNumber() {
                 verificationDisplayNotFound.value = "Account details verification failed, check the details and try again";
             }, 1000);
         }
+        localStorage.setItem('beneficiary', JSON.stringify(beneficiary));
     }
     else if (inputBankEaseAccountNumber.value.length < 10) {
         verificationDisplayFound.style.display = "none";
@@ -131,15 +133,18 @@ function delOtherBank() {
 
 //this function pops out the confirmation page for the user to confirm if he/she actually wants to proceed with the transction
 function gotoConfirmationPage() {
+    console.log(recipient);
     console.log("active");
-    // confirmPage.style.display = "block";
-    // setTimeout(() => {
-    //     confirmPage.style.bottom = "0px";
-    // }, 250);
-    // console.log(transferAmount.innerHTML.length);
-    // amountTag.innerHTML = transferAmount.innerHTML;
-    // accountDetailsTag.innerHTML = allBankEaseUser.firstName + " " + allBankEaseUser.lastName
-    // console.log(transferAmount.length);
+    confirmPage.style.display = "block";
+    setTimeout(() => {
+        confirmPage.style.bottom = "0px";
+    }, 250);
+    console.log(transferAmount.innerHTML.length);
+    //displaying the transfer amount
+    amountTag.innerHTML = transferAmount.innerHTML;
+
+    //displaying the beneficiary account name
+    accountDetailsTag.innerHTML = recipient.firstName + " " + recipient.lastName;
 }
 
 //this function returns the user back to the transfer page 
