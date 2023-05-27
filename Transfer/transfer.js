@@ -4,6 +4,10 @@ let displayOtherBankAmount = document.getElementById("otherBank-transfer-amount"
 let confirmPage = document.getElementById("confirmation-page");
 
 let allBankEaseUser = JSON.parse(localStorage.getItem("customers"));
+let curentCustomer = JSON.parse(localStorage.getItem('CU'));
+let recipient = JSON.parse(localStorage.getItem('beneficiary'));
+
+console.log(curentCustomer); 
 
 //this function takes the user back to the dashboard page
 function gotoDashboard() {
@@ -37,19 +41,19 @@ let accountDetailsTag = document.getElementById("account-details");
 verificationDisplayFound.style.display = "none";
 verificationDisplayNotFound.style.display = "none";
 
-let beneficiary;
-let recipient = JSON.parse(localStorage.getItem('beneficiary')) || [];
+let beneficiaryAccount;
 
 //this function checks if the account exist or not before proced=eding with the transaction
 function verifyAccountNumber() {
     if (inputBankEaseAccountNumber.value.length == 10) {
-
-        let beneficiary = allBankEaseUser.find(user => user.accountNumber == inputBankEaseAccountNumber.value);
+        beneficiaryAccount = inputBankEaseAccountNumber.value;
+        let beneficiary = allBankEaseUser.find(user => user.accountNumber == beneficiaryAccount);
 
         if (beneficiary) {
             setTimeout(() => {
                 verificationDisplayFound.style.display = "block";
                 verificationDisplayFound.value = beneficiary.firstName.toUpperCase() + " " + beneficiary.lastName.toUpperCase();
+                localStorage.setItem('beneficiary', JSON.stringify(beneficiary));
                 console.log(beneficiary);
             }, 1000);
         } else {
@@ -58,7 +62,6 @@ function verifyAccountNumber() {
                 verificationDisplayNotFound.value = "Account details verification failed, check the details and try again";
             }, 1000);
         }
-        localStorage.setItem('beneficiary', JSON.stringify(beneficiary));
     }
     else if (inputBankEaseAccountNumber.value.length < 10) {
         verificationDisplayFound.style.display = "none";
@@ -133,13 +136,13 @@ function delOtherBank() {
 
 //this function pops out the confirmation page for the user to confirm if he/she actually wants to proceed with the transction
 function gotoConfirmationPage() {
+    let recipient = JSON.parse(localStorage.getItem('beneficiary'));
     console.log(recipient);
-    console.log("active");
     confirmPage.style.display = "block";
     setTimeout(() => {
         confirmPage.style.bottom = "0px";
     }, 250);
-    console.log(transferAmount.innerHTML.length);
+    console.log(transferAmount.innerHTML);
     //displaying the transfer amount
     amountTag.innerHTML = transferAmount.innerHTML;
 
@@ -149,6 +152,7 @@ function gotoConfirmationPage() {
 
 //this function returns the user back to the transfer page 
 function goBack() {
+    // localStorage.removeItem('beneficiary');
     confirmPage.style.display = "none";
 }
 
@@ -158,6 +162,13 @@ function gotoEnterTransferPin() {
     setTimeout(() => {
         transactionPinPage.style.bottom = "0px";
     }, 250);
+}
+
+let firstPinInput = document.getElementById("passDigit1");
+
+function enterPin(btn) {
+    firstPinInput.focus();
+    firstPinInput.value = btn;
 }
 
 function closeModal() {
@@ -171,27 +182,61 @@ function moveToNext(currentInput, nextInputId) {
     if (inputValue.length === 1) {
         document.getElementById(nextInputId).focus();
     }
+    
 }
 
+
 //this function checks if all the inputs are filled and concatenate each input field value inside a variable
-// function validatesPin() {
-//     let pinDigits = '';
-//     let pinInputs = document.querySelectorAll('input[type="number"]');
+function validatesPin() {
+    let pinDigits = '';
+    let pinInputs = document.querySelectorAll('input[type="password"]');
 
-//     for (let i = 0; i < pinInputs.length; i++) {
-//       if (pinInputs[i].value === '') {
-//         // Empty field found, display an error message or handle the validation failure
-//         alert('Please fill in all PIN digits');
-//         return;
-//       }
-//       pinDigits += pinInputs[i].value;
-//     }
+    for (let i = 0; i < pinInputs.length; i++) {
+      if (pinInputs[i].value === '') {
+        // Empty field found, display an error message or handle the validation failure
+        alert('Please fill in all PIN digits');
+        return;
+      }
+      pinDigits += pinInputs[i].value;
+    }
+
+    let foundBeneficiary = allBankEaseUser.find(user => user.accountNumber == beneficiaryAccount);
+    console.log(foundBeneficiary);
+
+    //findind the index of the currentCustomer from the allBankEaseUser local storage
+    let currentCustomerIndex = allBankEaseUser.findIndex(user => user.accountNumber == curentCustomer.accountNumber)
+    console.log(currentCustomerIndex);
+
+    //findind the index of the recipient from the allBankEaseUser local storage
+    let recipientIndex = allBankEaseUser.findIndex(user => user.accountNumber == foundBeneficiary.accountNumber)
+    console.log(recipientIndex);
 
 
-//     // All PIN digits are filled, proceed with further actions
-//     console.log('PIN entered:', pinDigits);
-// }
+    // All PIN digits are filled, proceed with further actions
+    console.log('PIN entered:', pinDigits);
+    if (curentCustomer.transactionPin == pinDigits) {
+        //transaction is successful
 
-document.getElementById("passDigit4").addEventListener('input', () => {
-    document.getElementById('successful-div').style.display = "block";
-})
+        //getting the currentCustomer account balance after a successful transaction
+        curentCustomer.accountBalance -= transferAmount.innerHTML;
+        console.log("currentUser accountBalance: "+curentCustomer.accountBalance);
+
+        //getting the recipient account balance after a successful transaction
+        foundBeneficiary.accountBalance += Number(transferAmount.innerHTML);
+        console.log("beneficiary accountBalance: "+foundBeneficiary.accountBalance);
+
+
+        // allBankEaseUser[currentCustomerIndex].accountNumber
+        localStorage.removeItem('beneficiary');
+        document.getElementById('successful-div').style.display = "block";
+    } else {
+        alert("Invalid Transaction Pin")
+        for (let i = 0; i < pinInputs.length; i++) {
+            pinInputs[i].value = '';
+        }
+    }
+}
+
+// document.getElementById("passDigit4").addEventListener('input', () => {
+
+// })

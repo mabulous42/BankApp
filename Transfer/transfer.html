@@ -253,12 +253,12 @@
                                 <input type="password" name="" id="passDigit3" class="rounded-circle me-2" maxlength="1"
                                     oninput="moveToNext(this, 'passDigit4')" required>
                                 <input type="password" name="" id="passDigit4" class="rounded-circle" maxlength="1"
-                                    required>
+                                    required oninput="validatesPin()">
                             </div>
                             <h4 class="text-center forgetPin mt-5 mb-5">Forget Transaction Pin?</h4>
                             <div class="keyboard w-100 pt-2">
                                 <div class="w-100 d-flex align-items-center justify-content-center flex-wrap">
-                                    <input type="button" value="1" class="rounded mb-2 me-1">
+                                    <input type="button" value="1" class="rounded mb-2 me-1" onclick="enterPin('1')">
                                     <input type="button" value="2" class="rounded mb-2 me-1">
                                     <input type="button" value="3" class="rounded mb-2 ">
                                     <input type="button" value="4" class="rounded mb-2 me-1">
