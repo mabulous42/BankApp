@@ -144,7 +144,7 @@
                         <h6 class="w-100 beneficiary mb-3">Select from Beneficiaries</h6>
                         <div class="show-account-name w-100 mb-5">
                             <textarea name="" id="display-verification-result-notfound" value="" cols="30" rows="2" class="w-100 py-2 ps-3 mb-2 rounded" disabled></textarea>
-                            <input type="text" name="" id="display-verification-result-found" value="Mustapha Abbas" class="w-100 py-2 ps-3 mb-2 rounded"
+                            <input type="text" name="" id="display-verification-result-found" value="" class="w-100 py-2 ps-3 mb-2 rounded"
                                 disabled>
                         </div>
                         <div class="transfer-amount-div w-100 d-flex align-items-center justify-content-center">
@@ -246,34 +246,16 @@
 
                             <div class="mt-5 text-center">
                                 <h4 class="mb-4">Enter Transaction Pin</h4>
-                                <input type="tel" name="" id="passDigit1" class="rounded-circle me-2" maxlength="1"
+                                <input type="password" name="" id="passDigit1" class="rounded-circle me-2" maxlength="1"
                                     oninput="moveToNext(this, 'passDigit2')" required>
-                                <input type="tel" name="" id="passDigit2" class="rounded-circle me-2" maxlength="1"
+                                <input type="password" name="" id="passDigit2" class="rounded-circle me-2" maxlength="1"
                                     oninput="moveToNext(this, 'passDigit3')" required>
-                                <input type="tel" name="" id="passDigit3" class="rounded-circle me-2" maxlength="1"
+                                <input type="password" name="" id="passDigit3" class="rounded-circle me-2" maxlength="1"
                                     oninput="moveToNext(this, 'passDigit4')" required>
-                                <input type="tel" name="" id="passDigit4" class="rounded-circle" maxlength="1"
+                                <input type="password" name="" id="passDigit4" class="rounded-circle" maxlength="1"
                                     required oninput="validatesPin()">
                             </div>
                             <h4 class="text-center forgetPin mt-5 mb-5">Forget Transaction Pin?</h4>
-                            <!-- <div class="keyboard w-100 pt-2">
-                                <div class="w-100 d-flex align-items-center justify-content-center flex-wrap">
-                                    <input type="button" value="1" class="rounded mb-2 me-1" onclick="enterPin('1')">
-                                    <input type="button" value="2" class="rounded mb-2 me-1">
-                                    <input type="button" value="3" class="rounded mb-2 ">
-                                    <input type="button" value="4" class="rounded mb-2 me-1">
-                                    <input type="button" value="5" class="rounded mb-2 me-1">
-                                    <input type="button" value="6" class="rounded mb-2 ">
-                                    <input type="button" value="7" class="rounded mb-2 me-1">
-                                    <input type="button" value="8" class="rounded mb-2 me-1">
-                                    <input type="button" value="9" class="rounded mb-2 ">
-                                    <input type="button" value="" class="rounded mb-2 invisible" disabled>
-                                    <input type="button" value="0" class="rounded mb-2 me-1">
-                                    <div class="backspace rounded d-flex align-items-center justify-content-center">
-                                        <img src="../images/vec.png" alt="" class="del mb-2">
-                                    </div>
-                                </div>
-                            </div> -->
                         </div>
                     </div>
                     <div class="position-absolute loader-div w-100" id="loader">

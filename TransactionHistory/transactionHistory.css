@@ -1,0 +1,28 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto';
+}
+
+@media (max-width: 428px) {
+    main {
+        height: 100vh;
+        width: 100vw;
+        object-fit: contain;
+    }
+
+    .transfer-header-div {
+    }
+
+    .transfer-header {
+        width: 90%;
+    }
+
+    .transfer-header h5 {
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 23px;
+    }
+}

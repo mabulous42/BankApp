@@ -156,15 +156,16 @@ function goBack() {
     confirmPage.style.display = "none";
 }
 
+let firstPinInput = document.getElementById("passDigit1");
 let transactionPinPage = document.getElementById('enter-transaction-pin');
 function gotoEnterTransferPin() {
     transactionPinPage.style.display = "block";
+    firstPinInput.focus();
     setTimeout(() => {
         transactionPinPage.style.bottom = "0px";
     }, 250);
 }
 
-let firstPinInput = document.getElementById("passDigit1");
 
 function enterPin(btn) {
     firstPinInput.focus();
@@ -189,7 +190,7 @@ function moveToNext(currentInput, nextInputId) {
 //this function checks if all the inputs are filled and concatenate each input field value inside a variable
 function validatesPin() {
     let pinDigits = '';
-    let pinInputs = document.querySelectorAll('input[type="tel"]');
+    let pinInputs = document.querySelectorAll('input[type="password"]');
 
     for (let i = 0; i < pinInputs.length; i++) {
         if (pinInputs[i].value === '') {
