@@ -189,7 +189,7 @@ function moveToNext(currentInput, nextInputId) {
 //this function checks if all the inputs are filled and concatenate each input field value inside a variable
 function validatesPin() {
     let pinDigits = '';
-    let pinInputs = document.querySelectorAll('input[type="password"]');
+    let pinInputs = document.querySelectorAll('input[type="tel"]');
 
     for (let i = 0; i < pinInputs.length; i++) {
         if (pinInputs[i].value === '') {
