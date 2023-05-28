@@ -103,4 +103,18 @@
         }
     }
 
+    select,
+    .status{
+        width: 3.5rem;
+        height: 1.125rem;
+        color: rgba(0, 168, 89, 1);
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 16px;
+    }
+
+    option{
+        font-size: 10px;
+    }
+
 }

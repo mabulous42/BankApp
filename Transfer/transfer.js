@@ -70,7 +70,7 @@ function verifyAccountNumber() {
         verificationDisplayFound.style.display = "none";
         verificationDisplayNotFound.style.display = "none";
     }
-    else if (inputBankEaseAccountNumber.value > 10) {
+    else if (inputBankEaseAccountNumber.value.length > 10) {
         inputBankEaseAccountNumber.value = inputBankEaseAccountNumber.value.slice(0, 10);
     }
 }
@@ -81,9 +81,16 @@ let transferAmount = document.getElementById("transfer-amount");
 
 //global function that displays number(parameter) on the screen
 function generalDisplay(num, displayTag) {
-    displayTag.innerHTML += num
+    displayTag.innerHTML += num;
 
-    let enteredAmount = (displayTag.innerHTML)
+    if (displayTag.innerHTML.length > 10) {
+        displayTag.innerHTML = displayTag.innerHTML.slice(0, 15);
+    }
+
+    let enteredAmount = addCommasToNumber(displayTag.innerHTML);
+
+    // displayTag.innerHTML = Number(enteredAmount);
+
     console.log(enteredAmount);
     //checking to make sure that transfer amount is 100 and above which is 3 digits and above
     if (transferAmount.innerHTML.length >= 3) {
@@ -91,7 +98,6 @@ function generalDisplay(num, displayTag) {
     } else {
         transferButton.disabled = true;
     }
-
 
 }
 
