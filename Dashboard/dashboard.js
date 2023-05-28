@@ -84,9 +84,6 @@ function hideBalance() {
     console.log(currentUser);
 }
 
-
-
-
 function signOut() {
     localStorage.removeItem('CU');
     setTimeout(() => {

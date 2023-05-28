@@ -250,7 +250,7 @@ function validatesPin() {
             //updating the currentCustomer account balance after a successful transaction
             allBankEaseUser[currentCustomerIndex].accountBalance = currentCustomer.accountBalance;
 
-            //updating the currentCustomer account balance after a successful transaction
+            //updating the recipient account balance after a successful transaction
             allBankEaseUser[recipientIndex].accountBalance = foundBeneficiary.accountBalance;
 
             localStorage.removeItem('beneficiary');
@@ -282,6 +282,7 @@ function validatesPin() {
                 transactionType: "Money Sent",
                 accountName: beneficiaryName,
                 transactionTime: formattedDate,
+                transactionYear: date.getFullYear(),
                 transferAmount: transferAmount.innerHTML
             }
 
@@ -289,11 +290,15 @@ function validatesPin() {
                 transactionType: "Money Received",
                 accountName: currentCustomerName,
                 transactionTime: formattedDate,
+                transactionYear: date.getFullYear(),
                 transferAmount: transferAmount.innerHTML
             }
 
             //pushing the transaction data of the money sent into the currentCustomer transactionHistory field after a successful transaction
             allBankEaseUser[currentCustomerIndex].transactionHistory.push(moneySentData);
+
+            //updating the current user transactionHistory by pushing the data of the money sent into the currentCustomer transactionHistory field after a successful transaction
+            currentCustomer.transactionHistory.push(moneySentData);
 
             //pushing the transaction data of the money received into the beneficiary transactionHistory field after a successful transaction
             allBankEaseUser[recipientIndex].transactionHistory.push(moneyReceivedData);

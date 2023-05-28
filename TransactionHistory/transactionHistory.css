@@ -13,16 +13,64 @@
         object-fit: contain;
     }
 
-    .transfer-header-div {
-    }
-
-    .transfer-header {
+    .history-header {
         width: 90%;
     }
 
-    .transfer-header h5 {
+    .history-header h5 {
         font-weight: 500;
         font-size: 20px;
         line-height: 23px;
+    }
+
+    .history{
+        border-bottom: 0.5px solid #D9D9D9;
+    }
+
+    .history-header-category,
+    #show-transaction-history{
+        width: 90%;
+        margin: auto;
+    }
+
+    .d-history{
+        border-bottom: 1px solid #D9D9D9;
+    }
+
+    .t-image,
+    .t-image-g{
+        width: 1.75rem;
+        height: 1.75rem;
+        background-color: rgba(237, 50, 55, 1);
+    }
+
+    .t-image-g{
+        background-color: rgba(0, 168, 89, 1);
+    }
+
+    .t-type{
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 19px;
+    }
+
+    .t-name-date{
+        color: rgba(198, 196, 196, 1);
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 16px;
+    }
+
+    .t-amount{
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 19px;
+    }
+
+    .t-status{
+        color: rgba(0, 168, 89, 1);
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 16px;
     }
 }
