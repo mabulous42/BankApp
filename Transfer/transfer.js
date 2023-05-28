@@ -241,7 +241,6 @@ function validatesPin() {
             //getting the currentCustomer account balance after a successful transaction
             currentCustomer.accountBalance -= transferAmount.innerHTML;
             console.log("currentUser accountBalance: " + currentCustomer.accountBalance);
-            localStorage.setItem('CU', JSON.stringify(currentCustomer));
 
             //getting the recipient account balance after a successful transaction
             foundBeneficiary.accountBalance += Number(transferAmount.innerHTML);
@@ -254,7 +253,6 @@ function validatesPin() {
             allBankEaseUser[recipientIndex].accountBalance = foundBeneficiary.accountBalance;
 
             localStorage.removeItem('beneficiary');
-            localStorage.setItem('customers', JSON.stringify(allBankEaseUser));
 
             document.getElementById("loader").style.display = "block";
             setTimeout(() => {
@@ -282,16 +280,29 @@ function validatesPin() {
             let moneySentData = {
                 transactionType: "Money Sent",
                 accountName: beneficiaryName,
-                transactionTime: options,
+                transactionTime: formattedDate,
                 transferAmount: transferAmount.innerHTML
             }
 
             let moneyReceivedData = {
                 transactionType: "Money Received",
                 accountName: currentCustomerName,
-                transactionTime: options,
+                transactionTime: formattedDate,
                 transferAmount: transferAmount.innerHTML
             }
+
+            //pushing the transaction data of the money sent into the currentCustomer transactionHistory field after a successful transaction
+            allBankEaseUser[currentCustomerIndex].transactionHistory.push(moneySentData);
+
+            //pushing the transaction data of the money received into the beneficiary transactionHistory field after a successful transaction
+            allBankEaseUser[recipientIndex].transactionHistory.push(moneyReceivedData);
+            
+            //updating the current user details in the local storage
+            localStorage.setItem('CU', JSON.stringify(currentCustomer));
+
+            //updating all the bankEase users details in the local storage
+            localStorage.setItem('customers', JSON.stringify(allBankEaseUser));
+
         }
 
     } else {
