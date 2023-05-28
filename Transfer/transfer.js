@@ -4,10 +4,10 @@ let displayOtherBankAmount = document.getElementById("otherBank-transfer-amount"
 let confirmPage = document.getElementById("confirmation-page");
 
 let allBankEaseUser = JSON.parse(localStorage.getItem("customers"));
-let curentCustomer = JSON.parse(localStorage.getItem('CU'));
+let currentCustomer = JSON.parse(localStorage.getItem('CU'));
 let recipient = JSON.parse(localStorage.getItem('beneficiary'));
 
-console.log(curentCustomer); 
+console.log(currentCustomer); 
 
 //this function takes the user back to the dashboard page
 function gotoDashboard() {
@@ -200,35 +200,56 @@ function validatesPin() {
       pinDigits += pinInputs[i].value;
     }
 
+    //getting the beneficiary details by searcining with the beneficiary account number
     let foundBeneficiary = allBankEaseUser.find(user => user.accountNumber == beneficiaryAccount);
     console.log(foundBeneficiary);
 
     //findind the index of the currentCustomer from the allBankEaseUser local storage
-    let currentCustomerIndex = allBankEaseUser.findIndex(user => user.accountNumber == curentCustomer.accountNumber)
+    let currentCustomerIndex = allBankEaseUser.findIndex(user => user.accountNumber == currentCustomer.accountNumber)
     console.log(currentCustomerIndex);
 
-    //findind the index of the recipient from the allBankEaseUser local storage
+    //finding the index of the recipient from the allBankEaseUser local storage
     let recipientIndex = allBankEaseUser.findIndex(user => user.accountNumber == foundBeneficiary.accountNumber)
     console.log(recipientIndex);
 
 
     // All PIN digits are filled, proceed with further actions
     console.log('PIN entered:', pinDigits);
-    if (curentCustomer.transactionPin == pinDigits) {
+    if (currentCustomer.transactionPin == pinDigits) {
         //transaction is successful
 
-        //getting the currentCustomer account balance after a successful transaction
-        curentCustomer.accountBalance -= transferAmount.innerHTML;
-        console.log("currentUser accountBalance: "+curentCustomer.accountBalance);
+        if (currentCustomer.accountBalance < transferAmount.innerHTML) {
+            document.getElementById("loader").style.display = "block";
+            setTimeout(() => {
+                document.getElementById("loader").style.display = "none";
+                alert("Insufficient Fund");            
+            }, 2000);
+        } else {
+            //getting the currentCustomer account balance after a successful transaction
+            currentCustomer.accountBalance -= transferAmount.innerHTML;
+            console.log("currentUser accountBalance: "+currentCustomer.accountBalance);
+            localStorage.setItem('CU', JSON.stringify(currentCustomer));
+    
+            //getting the recipient account balance after a successful transaction
+            foundBeneficiary.accountBalance += Number(transferAmount.innerHTML);
+            console.log("beneficiary accountBalance: "+foundBeneficiary.accountBalance);
+    
+            //updating the currentCustomer account balance after a successful transaction
+            allBankEaseUser[currentCustomerIndex].accountBalance = currentCustomer.accountBalance;
+    
+            //updating the currentCustomer account balance after a successful transaction
+            allBankEaseUser[recipientIndex].accountBalance = foundBeneficiary.accountBalance;
+    
+            localStorage.removeItem('beneficiary');
+            localStorage.setItem('customers', JSON.stringify(allBankEaseUser));
+    
+            document.getElementById("loader").style.display = "block";
+            setTimeout(() => {
+            document.getElementById("loader").style.display = "none";
+                document.getElementById('successful-div').style.display = "block";            
+            }, 2000);            
+        }
 
-        //getting the recipient account balance after a successful transaction
-        foundBeneficiary.accountBalance += Number(transferAmount.innerHTML);
-        console.log("beneficiary accountBalance: "+foundBeneficiary.accountBalance);
-
-
-        // allBankEaseUser[currentCustomerIndex].accountNumber
-        localStorage.removeItem('beneficiary');
-        document.getElementById('successful-div').style.display = "block";
     } else {
         alert("Invalid Transaction Pin")
         for (let i = 0; i < pinInputs.length; i++) {
