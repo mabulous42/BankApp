@@ -7,7 +7,7 @@ let allBankEaseUser = JSON.parse(localStorage.getItem("customers"));
 let currentCustomer = JSON.parse(localStorage.getItem('CU'));
 let recipient = JSON.parse(localStorage.getItem('beneficiary'));
 
-console.log(currentCustomer); 
+console.log(currentCustomer);
 
 //this function takes the user back to the dashboard page
 function gotoDashboard() {
@@ -82,7 +82,7 @@ function generalDisplay(num, displayTag) {
     //checking to make sure that transfer amount is 100 and above which is 3 digits and above
     if (transferAmount.innerHTML.length >= 3) {
         console.log("yes");
-        transferButton.disabled = false 
+        transferButton.disabled = false
     } else {
         transferButton.disabled = true;
     }
@@ -110,7 +110,7 @@ function globalDelete(displayTag) {
     //checking to make sure that transfer amount is 100 and above which is 3 digits and above
     if (transferAmount.innerHTML.length >= 3) {
         console.log("yes");
-        transferButton.disabled = false 
+        transferButton.disabled = false
     } else {
         transferButton.disabled = true;
     }
@@ -182,7 +182,7 @@ function moveToNext(currentInput, nextInputId) {
     if (inputValue.length === 1) {
         document.getElementById(nextInputId).focus();
     }
-    
+
 }
 
 
@@ -192,17 +192,25 @@ function validatesPin() {
     let pinInputs = document.querySelectorAll('input[type="password"]');
 
     for (let i = 0; i < pinInputs.length; i++) {
-      if (pinInputs[i].value === '') {
-        // Empty field found, display an error message or handle the validation failure
-        alert('Please fill in all PIN digits');
-        return;
-      }
-      pinDigits += pinInputs[i].value;
+        if (pinInputs[i].value === '') {
+            // Empty field found, display an error message or handle the validation failure
+            alert('Please fill in all PIN digits');
+            return;
+        }
+        pinDigits += pinInputs[i].value;
     }
 
     //getting the beneficiary details by searcining with the beneficiary account number
     let foundBeneficiary = allBankEaseUser.find(user => user.accountNumber == beneficiaryAccount);
     console.log(foundBeneficiary);
+
+    //passing the beneficiary first name and last name inside a variable
+    let beneficiaryName = foundBeneficiary.firstName + " " + foundBeneficiary.lastName;
+    console.log(beneficiaryName);
+
+    //passing the current customer first name and last name inside a variable
+    let currentCustomerName = currentCustomer.firstName + " " + currentCustomer.lastName;
+    console.log(currentCustomerName);
 
     //findind the index of the currentCustomer from the allBankEaseUser local storage
     let currentCustomerIndex = allBankEaseUser.findIndex(user => user.accountNumber == currentCustomer.accountNumber)
@@ -222,32 +230,68 @@ function validatesPin() {
             document.getElementById("loader").style.display = "block";
             setTimeout(() => {
                 document.getElementById("loader").style.display = "none";
-                alert("Insufficient Fund");            
             }, 2000);
+            setTimeout(() => {
+                alert("Insufficient Fund");
+                for (let i = 0; i < pinInputs.length; i++) {
+                    pinInputs[i].value = '';
+                }
+            }, 2500);
         } else {
             //getting the currentCustomer account balance after a successful transaction
             currentCustomer.accountBalance -= transferAmount.innerHTML;
-            console.log("currentUser accountBalance: "+currentCustomer.accountBalance);
+            console.log("currentUser accountBalance: " + currentCustomer.accountBalance);
             localStorage.setItem('CU', JSON.stringify(currentCustomer));
-    
+
             //getting the recipient account balance after a successful transaction
             foundBeneficiary.accountBalance += Number(transferAmount.innerHTML);
-            console.log("beneficiary accountBalance: "+foundBeneficiary.accountBalance);
-    
+            console.log("beneficiary accountBalance: " + foundBeneficiary.accountBalance);
+
             //updating the currentCustomer account balance after a successful transaction
             allBankEaseUser[currentCustomerIndex].accountBalance = currentCustomer.accountBalance;
-    
+
             //updating the currentCustomer account balance after a successful transaction
             allBankEaseUser[recipientIndex].accountBalance = foundBeneficiary.accountBalance;
-    
+
             localStorage.removeItem('beneficiary');
             localStorage.setItem('customers', JSON.stringify(allBankEaseUser));
-    
+
             document.getElementById("loader").style.display = "block";
             setTimeout(() => {
-            document.getElementById("loader").style.display = "none";
-                document.getElementById('successful-div').style.display = "block";            
-            }, 2000);            
+                document.getElementById("loader").style.display = "none";
+                document.getElementById('successful-div').style.display = "block";
+            }, 2000);
+
+            //creating instant of Date() class
+            const date = new Date();
+
+            const options = {
+                month: 'long',
+                day: 'numeric',
+                hour: 'numeric',
+                minute: 'numeric',
+                hour12: true
+            };
+            
+            //formatting the date to this format May 28 at 12:50 PM
+            const formattedDate = date.toLocaleString('en-US', options);
+
+            console.log(formattedDate);
+
+            //pushing some of the transaction data to transactionHistory local storage
+            let moneySentData = {
+                transactionType: "Money Sent",
+                accountName: beneficiaryName,
+                transactionTime: options,
+                transferAmount: transferAmount.innerHTML
+            }
+
+            let moneyReceivedData = {
+                transactionType: "Money Received",
+                accountName: currentCustomerName,
+                transactionTime: options,
+                transferAmount: transferAmount.innerHTML
+            }
         }
 
     } else {
