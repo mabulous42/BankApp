@@ -43,6 +43,9 @@ verificationDisplayNotFound.style.display = "none";
 
 let beneficiaryAccount;
 
+//disbling the confirm transfer button to make sure the amount is atleast 100 before proceeding with the transaction
+transferButton.disabled = true;
+
 //this function checks if the account exist or not before proced=eding with the transaction
 function verifyAccountNumber() {
     if (inputBankEaseAccountNumber.value.length == 10) {
@@ -79,17 +82,19 @@ let transferAmount = document.getElementById("transfer-amount");
 //global function that displays number(parameter) on the screen
 function generalDisplay(num, displayTag) {
     displayTag.innerHTML += num
+
+    let enteredAmount = (displayTag.innerHTML)
+    console.log(enteredAmount);
     //checking to make sure that transfer amount is 100 and above which is 3 digits and above
     if (transferAmount.innerHTML.length >= 3) {
-        console.log("yes");
-        transferButton.disabled = false
+        transferButton.disabled = false            
     } else {
         transferButton.disabled = true;
     }
+
+
 }
 
-//disbling the confirm transfer button to make sure the amount is atleast 100 before proceeding with the transaction
-transferButton.disabled = true;
 
 //displaying number(parameter) on the screen
 function displayNumber(num) {
@@ -127,27 +132,32 @@ function delOtherBank() {
 }
 
 //this function adds comma(,) to the number after each 3 digits
-// function addCommasToNumber(num) {
-//     const parts = num.toString().split(".");
-//     parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-//     return parts.join(".");
-// }
+function addCommasToNumber(num) {
+    const parts = num.toString().split(".");
+    parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    return parts.join(".");
+}
 
 
 //this function pops out the confirmation page for the user to confirm if he/she actually wants to proceed with the transction
 function gotoConfirmationPage() {
     let recipient = JSON.parse(localStorage.getItem('beneficiary'));
     console.log(recipient);
-    confirmPage.style.display = "block";
+    if (verificationDisplayFound.style.display == "none") {
+        alert("Please enter the beneficiary account")
+    } else {
+        confirmPage.style.display = "block";
     setTimeout(() => {
         confirmPage.style.bottom = "0px";
     }, 250);
     console.log(transferAmount.innerHTML);
     //displaying the transfer amount
-    amountTag.innerHTML = transferAmount.innerHTML;
+    amountTag.innerHTML = Number(transferAmount.innerHTML).toLocaleString();
 
     //displaying the beneficiary account name
     accountDetailsTag.innerHTML = recipient.firstName + " " + recipient.lastName;
+    }
+    
 }
 
 //this function returns the user back to the transfer page 
@@ -271,7 +281,7 @@ function validatesPin() {
                 minute: 'numeric',
                 hour12: true
             };
-            
+
             //formatting the date to this format May 28 at 12:50 PM
             const formattedDate = date.toLocaleString('en-US', options);
 
@@ -302,7 +312,7 @@ function validatesPin() {
 
             //pushing the transaction data of the money received into the beneficiary transactionHistory field after a successful transaction
             allBankEaseUser[recipientIndex].transactionHistory.push(moneyReceivedData);
-            
+
             //updating the current user details in the local storage
             localStorage.setItem('CU', JSON.stringify(currentCustomer));
 
