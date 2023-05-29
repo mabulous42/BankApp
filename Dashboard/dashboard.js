@@ -90,3 +90,7 @@ function signOut() {
         window.location.href = "../Signin/signin.html";
     }, 2000);
 }
+
+function gotoAirtimeRecharge() {
+    window.location.href = "../AirtimeRecharge/airtimeRecharge.html";
+}
