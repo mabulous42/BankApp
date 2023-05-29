@@ -14,6 +14,38 @@
         background-size: cover;
         background-repeat: no-repeat;
         object-fit: contain;
+        transition: all 0.5s ease-in-out;
+        right: 428px;
+    }
+
+    .start-screen-div {
+        background-color: black;
+        height: 100vh;
+        width: 100vh;
+    }
+
+    .inner-start-screen {
+        width: 100%;
+        height: 100%;
+        background-color: white;
+    }
+
+    .image-div {
+        top: 27.125rem;
+        visibility: hidden;
+        transition: all 2s ease-in-out;
+    }
+
+    .banking-made-easy {
+        top: 21.8rem;
+        transition: all 0.5s ease-out;
+        visibility: hidden;
+    }
+
+    .banking-made-easy h3 {
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 21px;
     }
 
     .getstarted-text-div {
@@ -46,7 +78,7 @@
         background-color: rgba(0, 168, 89, 1);
     }
 
-    .getstarted-btn:hover{
+    .getstarted-btn:hover {
         background-color: rgb(53, 211, 137);
     }
 

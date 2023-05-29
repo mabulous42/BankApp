@@ -15,24 +15,36 @@
     </style>
 </head>
 
-<body>
-    <main class="rounded w-100 position-relative">
-        <div class="position-absolute d-flex align-items-center justify-content-center w-100 getstarted-text-div">
-            <div class="w-75 text-center">
-                <div>
-                    <h3 class="fw-bold safe-h3"><span class="safe-text">Safe and fast</span><br><span
-                            class="banking">banking operations</span></h3>
-                </div>
-                <div class="mt-4">
-                    <h6 class="offer-h6 fw-bold">We offer simple and<br>easy banking at all time</h6>
-                </div>
+<body class="position-relative">
+    <div class="position-absolute start-screen-div w-100">
+        <div class="position-relative inner-start-screen w-100">
+            <div class="position-absolute w-100 image-div d-flex align-items-center justify-content-center" id="bankease-img">
+                <img src="./images/bankease.png" alt="" class="w-50 bankease-image">
+            </div>
+            <div class="position-absolute banking-made-easy w-100 d-flex align-items-center justify-content-center" id="banking-made">
+                <h3 class="">Banking made easy</h3>
             </div>
         </div>
-        <div class="getstarted-btn-div position-absolute d-flex align-items-center justify-content-center w-100">
-            <button onclick="gotoSignInPage()" class="getstarted-btn rounded d-flex align-items-center justify-content-center">
-                <span class="get-started-text">Get Started</span> 
-                <span class="vector"><img src="./images/Vector.svg" alt=""></span>
-            </button>           
+    </div>
+    <main class="position-relative" id="main">
+        <div class="rounded w-100 get-started-div">
+            <div class="position-absolute d-flex align-items-center justify-content-center w-100 getstarted-text-div">
+                <div class="w-75 text-center">
+                    <div>
+                        <h3 class="fw-bold safe-h3"><span class="safe-text">Safe and fast</span><br><span
+                                class="banking">banking operations</span></h3>
+                    </div>
+                    <div class="mt-4">
+                        <h6 class="offer-h6 fw-bold">We offer simple and<br>easy banking at all time</h6>
+                    </div>
+                </div>
+            </div>
+            <div class="getstarted-btn-div position-absolute d-flex align-items-center justify-content-center w-100">
+                <button onclick="gotoSignInPage()" class="getstarted-btn rounded d-flex align-items-center justify-content-center">
+                    <span class="get-started-text">Get Started</span> 
+                    <span class="vector"><img src="./images/Vector.svg" alt=""></span>
+                </button>           
+            </div>
         </div>
     </main>
 
