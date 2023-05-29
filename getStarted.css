@@ -30,6 +30,13 @@
         background-color: white;
     }
 
+    .image-div1{
+        top: 30rem;
+        opacity: 1;
+        transition: all 0.5s ease-in-out;
+        /* top: 10rem; */
+    }
+
     .image-div {
         top: 27.125rem;
         visibility: hidden;
