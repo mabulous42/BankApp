@@ -37,6 +37,10 @@
         /* top: 10rem; */
     }
 
+    #the-image1{
+        width: 100%;
+    }
+
     .image-div {
         top: 27.125rem;
         visibility: hidden;

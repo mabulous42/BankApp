@@ -6,6 +6,7 @@ function gotoSignInPage() {
 
 setTimeout(() => {
     document.getElementById("image-div-1").style.top = "10rem";
+    document.getElementById("the-image1").style.width = "85%";
     setTimeout(() => {        
         document.getElementById("image-div-1").style.opacity = "0";
         document.getElementById("image-div-1").style.visibility = "hidden";
