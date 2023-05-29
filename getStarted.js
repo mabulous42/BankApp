@@ -11,8 +11,8 @@ setTimeout(() => {
 setTimeout(() => {
     document.getElementById("banking-made").style.visibility = "visible";
     document.getElementById("banking-made").style.top = "31.8rem";
-}, 2000);
+}, 3000);
 
 setTimeout(() => {
     document.getElementById("main").style.right = "0";
-}, 4000);
+}, 6000);
