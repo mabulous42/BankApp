@@ -150,6 +150,7 @@
     .show-account-name{
         top: 13.5rem;
         width: 90%;
+        display: none;
     }
 
     .show-account-name textarea,
