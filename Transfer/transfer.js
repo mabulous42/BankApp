@@ -54,7 +54,6 @@ function verifyAccountNumber() {
 
         if (beneficiary) {
             setTimeout(() => {
-                document.getElementById("display-account-result-div").style.display = "block";
                 verificationDisplayFound.style.display = "block";
                 verificationDisplayFound.value = beneficiary.firstName.toUpperCase() + " " + beneficiary.lastName.toUpperCase();
                 localStorage.setItem('beneficiary', JSON.stringify(beneficiary));
@@ -62,7 +61,6 @@ function verifyAccountNumber() {
             }, 1000);
         } else {
             setTimeout(() => {
-                document.getElementById("display-account-result-div").style.display = "block";
                 verificationDisplayNotFound.style.display = "block";
                 verificationDisplayNotFound.value = "Account details verification failed, check the details and try again";
             }, 1000);
