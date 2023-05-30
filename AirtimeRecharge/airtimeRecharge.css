@@ -93,11 +93,59 @@
 
     .confirmation-pin-div{
         bottom: 0;
-        background-color: red;
+        background-color: white;
+    }
+
+    .confirmation-pin-div h1{
+        font-weight: 700;
+        font-size: 30px;
+        line-height: 60px;
+    }
+
+    .confirmation-pin-div h4{
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 30px
+    }
+
+    .confirmation-pin-div h5{
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 30px;
+    }
+
+    .balance{
+        border: 1px solid grey;
+    }
+
+    .balance h2{
+        font-size: 22px;
+        font-weight: 500;
+    }
+
+    .confirmation-pin-div button{
+        font-size: 22px;
+        font-weight: 500;
     }
 
     .loader-div{
         top: 30rem;
+    }
+
+    .enter-pin-div{
+        bottom: 0;
+    }
+
+    .pin input{
+        width: 2rem;
+        height: 3rem;
+        border: 1px solid grey;
+        background-color: inherit;
+        outline: none;
+    }
+
+    .pin input:focus{
+        border: 1px solid rgb(3, 214, 116);
     }
 
     .loader {
@@ -127,6 +175,10 @@
         100% {
             transform: rotate(360deg);
         }
+    }
+
+    .a-link{
+        text-decoration: none;
     }
 
 

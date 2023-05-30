@@ -2,6 +2,8 @@ let naira = document.getElementById("naira");
 let payBtn = document.getElementById("pay-btn");
 let inputAmount = document.getElementById("input-amount");
 let loader = document.getElementById("loader");
+let confirmationPage = document.getElementById("confirmation");
+let enterPinPage = document.getElementById("enter-pin");
 let placeHolder = inputAmount.placeholder;
 
 loader.style.display = "none";
@@ -47,3 +49,7 @@ inputAmount.addEventListener('input', () => {
         payBtn.disabled = true;
     }
 })
+
+function gotoConfirmationDiv() {
+    confirmationPage.style.d
+}
