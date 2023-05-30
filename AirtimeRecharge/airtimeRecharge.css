@@ -23,24 +23,73 @@
         line-height: 23px;
     }
 
-    .airtime-header h6{
+    .airtime-header h6 {
         color: rgba(0, 168, 89, 1);
         font-size: 16px;
         line-height: 20px;
     }
 
-    .ads-div{
+    .ads-div {
         width: 90%;
     }
 
-    .select-network-phone-number{
+    .select-network-phone-number {
         width: 90%;
     }
 
-    .select-network-phone-number input{
+    .select-network-phone-number input {
         border-bottom: 1px solid black;
         outline: none;
     }
 
-    
+    .r-amount {
+        width: 90%;
+    }
+
+    .r-amount h4 {
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 16px;
+    }
+
+    .r-amount button {
+        width: 30%;
+    }
+
+    .r-amount h5 {
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 18px;
+    }
+
+    .r-amount h6 {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 17px;
+        color: rgba(0, 168, 89, 1);
+    }
+
+    .input-recharge-amount-div h5 {
+        top: 0.35rem;
+        font-size: 20px;
+    }
+
+    .input-recharge-amount-div input {
+        border-bottom: 1px solid black;
+        outline: none;
+        font-size: 20px;
+        width: 90%;
+    }
+
+    .input-recharge-amount-div input:focus::placeholder {
+        opacity: 0;
+    }
+
+    .input-recharge-amount-div button{
+        color: white;
+        width: 20%;
+        background-color: rgb(141, 216, 180);
+    }
+
+
 }

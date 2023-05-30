@@ -16,7 +16,7 @@
 </head>
 <body>
     <main>
-        <div class="airtime-header-div w-100 pb-2 mb-2">
+        <div class="airtime-header-div w-100 pb-2">
             <div class="airtime-header mx-auto d-flex align-items-center justify-content-between py-3">
                 <div class="w-25">
                     <img src="../images/material-symbols_arrow-back-ios-new-rounded.png" alt="" class="w-25"
@@ -33,7 +33,7 @@
         <div class="ads-div mx-auto">
             <img src="../images/bankease_ads2.jpg" alt="" class="w-100">
         </div>
-        <div class="w-100">
+        <div class="w-100 mt-3 shadow pb-2">
             <div class="select-network-phone-number mx-auto d-flex align-items-center">
                 <div class="custom-select me-2">
                     <select name="" id="" class="p-2">
@@ -47,6 +47,42 @@
                 <div class="d-flex align-items-center">
                     <h6 class="mt-2 me-1">+234</h6>
                     <input type="tel" name="" id="" placeholder="Enter your phone number" class="mt-1">
+                </div>
+            </div>
+        </div>
+        <div class="w-100">
+            <div class="r-amount shadow rounded p-2 pt-4 pb-3 mx-auto mt-2">
+                <h4 class="mb-3">Top Up</h4>
+                <div class="d-flex align-items-center justify-content-center flex-wrap mb-3">
+                    <button class="shadow p-2 mb-4 me-3">
+                        <h5>₦50</h5>
+                        <h6>₦1 cashback</h6>
+                    </button>
+                    <button class="shadow p-2 mb-4 me-3">
+                        <h5>₦100</h5>
+                        <h6>₦2 cashback</h6>
+                    </button>
+                    <button class="shadow p-2 mb-4">
+                        <h5>₦200</h5>
+                        <h6>₦4 cashback</h6>
+                    </button>
+                    <button class="shadow p-2 me-3">
+                        <h5>₦500</h5>
+                        <h6>₦10 cashback</h6>
+                    </button>
+                    <button class="shadow p-2 me-3">
+                        <h5>₦1000</h5>
+                        <h6>₦20 cashback</h6>
+                    </button>
+                    <button class="shadow p-2">
+                        <h5>₦2000</h5>
+                        <h6>₦40 cashback</h6>
+                    </button>
+                </div>
+                <div class="input-recharge-amount-div position-relative d-flex align-items-center">
+                    <h5 class="position-absolute" id="naira">₦</h5>
+                    <input type="tel" value="" id="input-amount" class="ps-4" placeholder="₦50 - ₦5000" onfocus="showNaira()">
+                    <button type="submit" class="rounded-pill py-1" id="pay-btn">Pay</button>
                 </div>
             </div>
         </div>
