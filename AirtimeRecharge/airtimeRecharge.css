@@ -94,6 +94,7 @@
     .confirmation-pin-div{
         bottom: 0;
         background-color: white;
+        display: none;
     }
 
     .confirmation-pin-div h1{
@@ -128,12 +129,38 @@
         font-weight: 500;
     }
 
+    .confirm-cancel-div{
+        top: 0;
+        height: 100vh;
+        background-color: rgba(92, 85, 85, 0.705);
+        visibility: hidden;
+    }
+
+    .cancel-btn{
+        background-color: inherit;
+        border: 1px solid grey;
+    }
+
+    .confirm-msg{
+        width: 80%;
+    }
+
+    .confirm-msg button{
+        width: 40%;
+    }
+
+    .confirm-cancel-div h3{
+        font-size: 18px;
+    }
+
     .loader-div{
         top: 30rem;
     }
 
     .enter-pin-div{
         bottom: 0;
+        height: 50vh;
+        display: none;
     }
 
     .pin input{
