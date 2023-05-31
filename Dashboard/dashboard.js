@@ -7,7 +7,6 @@ if (!currentUser) {
     window.location.href = "../Signin/signin.html";
 }
 
-console.log(!currentUser);
 
 //passing the current user first name to variable customerName
 let customerName = currentUser.firstName;

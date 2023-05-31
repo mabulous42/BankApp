@@ -9,14 +9,14 @@ function displayHistory() {
         let filteredArray = currentUser.transactionHistory.filter(item => item.transactionType == "Airtime");
         console.log(filteredArray);
 
-        filteredArray.forEach(element => {
-            if (filteredArray == "") {
-                displayHistoryTag.innerHTML = `
-                <div class='d-flex align-items-center justify-content-center'>
-                    <h3>No recent transaction</h3>
-                </div>
-                `
-            } else {
+        if (filteredArray == "") {
+            displayHistoryTag.innerHTML = `
+            <div class='d-flex align-items-center justify-content-center'>
+                <h3>No recent transaction</h3>
+            </div>
+            `
+        } else {
+            filteredArray.forEach(element => {
                 displayHistoryTag.innerHTML += `
                 <div class="mx-auto d-flex align-items-center justify-content-between d-history mb-2 pb-2">
                     <div class='d-flex align-items-center'>
@@ -37,9 +37,11 @@ function displayHistory() {
                         <div class='t-status'>Successful</div>
                     </div>
                 </div>
-                `
-            }            
-        });
+                `    
+            });
+
+        }
+
 
     }, 2000);
 
