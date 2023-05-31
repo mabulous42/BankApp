@@ -41,7 +41,7 @@ function allTransactionHistory() {
                         </div>
                     </div>
                     `
-                } else {
+                } else if (element.transactionType == "Money Sent") { 
                     displayHistoryTag.innerHTML += `
                     <div class="mx-auto d-flex align-items-center justify-content-between d-history mb-2 pb-2">
                         <div class='d-flex align-items-center'>
@@ -63,6 +63,29 @@ function allTransactionHistory() {
                         </div>
                     </div>
                     `
+                }
+                else {
+                    displayHistoryTag.innerHTML += `
+                    <div class="mx-auto d-flex align-items-center justify-content-between d-history mb-2 pb-2">
+                    <div class='d-flex align-items-center'>
+                        <div class='me-2 t-image rounded-circle text-center'>
+                            <img src='../images/bankeasep-1.png' / class='w-50'>
+                        </div>
+                        <div>
+                            <div class='t-type'>${element.transactionType}</div>
+                            <div class='d-flex align-items-center t-name-date'>
+                                <div>${element.rechargedNumber}</div>
+                                <span class='mx-1'>-</span>
+                                <div>${element.transactionTime}</div>
+                            </div>
+                        </div>
+                        </div>
+                        <div>
+                            <div class='t-amount text-end'>-${'₦'}${Number(element.rechargedAmount).toLocaleString()}</div>
+                            <div class='t-status'>Successful</div>
+                        </div>
+                    </div>
+                    `    
                 }
             });
         }
