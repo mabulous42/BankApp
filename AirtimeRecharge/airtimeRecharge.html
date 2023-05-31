@@ -36,17 +36,17 @@
         <div class="w-100 mt-3 shadow pb-2">
             <div class="select-network-phone-number mx-auto d-flex align-items-center">
                 <div class="custom-select me-2">
-                    <select name="" id="" class="p-2">
+                    <select name="" class="p-2" id="select-network">
                         <option value="" disabled selected>Select Network</option>
-                        <option value="" class="">MTN</option>
-                        <option value="" class="">GLO</option>
-                        <option value="" class="">AIRTEL</option>
-                        <option value="" class="">9MOBILE</option>
+                        <option value="MTN" class="">MTN</option>
+                        <option value="GLO" class="">GLO</option>
+                        <option value="AIRTEL" class="">AIRTEL</option>
+                        <option value="9MOBILE" class="">9MOBILE</option>
                     </select>
                 </div>
                 <div class="d-flex align-items-center">
                     <h6 class="mt-2 me-1">+234</h6>
-                    <input type="tel" name="" id="" placeholder="Enter your phone number" class="mt-1">
+                    <input type="tel" name="" id="enter-phone-number" placeholder="Enter your phone number" class="mt-1">
                 </div>
             </div>
         </div>
@@ -54,27 +54,27 @@
             <div class="r-amount shadow rounded p-2 pt-4 pb-3 mx-auto mt-2">
                 <h4 class="mb-3">Top Up</h4>
                 <div class="d-flex align-items-center justify-content-center flex-wrap mb-3">
-                    <button class="shadow pt-3 pb-1 mb-4 me-3">
+                    <button class="shadow pt-3 pb-1 mb-4 me-3" onclick="clickToRecharge('50')">
                         <h5>₦50</h5>
                         <h6>₦1 cashback</h6>
                     </button>
-                    <button class="shadow pt-3 pb-1 mb-4 me-3">
+                    <button class="shadow pt-3 pb-1 mb-4 me-3" onclick="clickToRecharge('100')">
                         <h5>₦100</h5>
                         <h6>₦2 cashback</h6>
                     </button>
-                    <button class="shadow pt-3 pb-1 mb-4">
+                    <button class="shadow pt-3 pb-1 mb-4" onclick="clickToRecharge('200')">
                         <h5>₦200</h5>
                         <h6>₦4 cashback</h6>
                     </button>
-                    <button class="shadow pt-3 pb-1 me-3">
+                    <button class="shadow pt-3 pb-1 me-3" onclick="clickToRecharge('500')">
                         <h5>₦500</h5>
                         <h6>₦10 cashback</h6>
                     </button>
-                    <button class="shadow pt-3 pb-1 me-3">
+                    <button class="shadow pt-3 pb-1 me-3" onclick="clickToRecharge('1000')">
                         <h5>₦1000</h5>
                         <h6>₦20 cashback</h6>
                     </button>
-                    <button class="shadow pt-3 pb-1">
+                    <button class="shadow pt-3 pb-1" onclick="clickToRecharge('2000')">
                         <h5>₦2000</h5>
                         <h6>₦40 cashback</h6>
                     </button>
@@ -101,18 +101,18 @@
                 </div>
                 <div class="d-flex align-items-center justify-content-between">
                     <h5>Amount</h5>
-                    <h4>₦<span>50</span>.00</h4>
+                    <h4>₦<span id="show-recharge-amount"></span>.00</h4>
                 </div>
                 <div class="d-flex align-items-center justify-content-between">
                     <h5>Product Name</h5>
-                    <h4>Network name</h4>
+                    <h4>Airtime_<span id="show-selected-network"></span></h4>
                 </div>
                 <div class="d-flex align-items-center justify-content-between mb-5">
                     <h5>Cashback to earn</h5>
-                    <h4>₦<span>0.02 x amount</span>.00</h4>
+                    <h4>₦<span id="show-cashback-amount">0.02 x amount</span>.00</h4>
                 </div>
                 <div class="balance mb-5 mx-auto w-100 py-5 ps-4">
-                    <h2>Balance(<span>balance</span>)</h2>
+                    <h2>Balance(<span id="show-balance">balance</span>)</h2>
                 </div>
                 <div class="w-100">
                     <button class="bg-success w-100 py-3 text-white rounded" id="confirm-btn">Confirm</button>
@@ -141,13 +141,13 @@
                 <h6 class="mt-2 ms-3 w-50">Enter Transaction PIN</h6>
             </div>
             <div class="pin w-100 d-flex align-items-center justify-content-center">
-                <input type="tel" name="" id="" class="shadow me-2">
-                <input type="tel" name="" id="" class="shadow me-2">
-                <input type="tel" name="" id="" class="shadow me-2">
-                <input type="tel" name="" id="" class="shadow ">
+                <input type="password" maxlength="1" name="" id="pin1" oninput="moveToNext(this, 'pin2')" class="shadow me-3" required>
+                <input type="password" maxlength="1" name="" id="pin2" oninput="moveToNext(this, 'pin3')" class="shadow me-3" required>
+                <input type="password" maxlength="1" name="" id="pin3" oninput="moveToNext(this, 'pin4')" class="shadow me-3" required>
+                <input type="password" maxlength="1" name="" id="pin4" class="shadow" oninput="verifyRecharge()" required>
             </div>
-            <div class="d-flex align-items-center justify-content-center mt-3">
-                <h6 class="text-success">Forgot Transaction Pin?</h6>
+            <div3 class="d-flex align-items-center justify-content-center mt-3">
+                <h6 class="text-success mt-3">Forgot Transaction Pin?</h6>
             </div>
         </div>
     </main>

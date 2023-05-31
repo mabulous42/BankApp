@@ -169,6 +169,7 @@
         border: 1px solid grey;
         background-color: inherit;
         outline: none;
+        padding-left: 12px;
     }
 
     .pin input:focus{
