@@ -20,7 +20,7 @@
     <main class="position-relative">
         <div class="header-div w-100 d-flex align-items-center justify-content-between pt-1 pb-2 px-2 mb-2">
             <div class="d-flex align-items-center w-100 text-center me-4">
-                <img src="../images/Ellipse1.png" alt="" class="avatar">
+                <img src="../images/Ellipse1.png" alt="" class="avatar" onclick="gotoSettings()">
                 <div class="ms-2">
                     <h5 class="welcome-text mb-0">Welcome,</h5>
                     <h5 id="customer-name"></h5>
@@ -194,9 +194,6 @@
                 </div>
             </div>
         </div>
-        <div class="mt-5 position-absolute top-0 end-0">
-            <button class="btn btn-danger" onclick="signOut()">Log Out</button>
-        </div>
         <div class="footer fixed-bottom w-100 d-flex align-items-center justify-content-center">
             <div class="footer-inner mt-2 d-flex mx-auto align-items-center justify-content-between">
                 <a href="../Dashboard/dashboard.html" class="a-link">
@@ -224,7 +221,7 @@
                         <h6 class="text-center mt-1">Card</h6>
                     </div>                    
                 </a>
-                <a href="#" class="a-link">
+                <a href="../Profile/profile.html" class="a-link">
                     <div>
                         <div class="mx-auto round d-flex align-items-center justify-content-center">
                             <img src="../images/uiw_setting.png" alt="" class="w-100">

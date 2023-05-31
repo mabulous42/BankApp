@@ -1,0 +1,75 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto';
+}
+
+@media (max-width: 428px) {
+    main {
+        height: 100vh;
+        width: 100vw;
+        object-fit: contain;
+    }
+
+    .settings-header {
+        width: 90%;
+    }
+
+    .settings-header h5 {
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 23px;
+    }
+
+    .settings-header-div{
+        border-bottom: 0.5px solid #D9D9D9;
+    }
+
+    .profile-img-div{
+        top: 8.5rem;
+    }
+    
+    .p-image-div{
+        width: 8.125rem;
+        height: 8.125rem;
+    }
+
+    .choose-file{
+        top: 17rem;
+    }
+
+    .name-tag{
+        top: 20.5rem;
+    }
+
+    .account-settings-div{
+        top: 25rem;
+    }
+
+    .inner-account-settings-div{
+        width: 90%;
+    }
+
+    .i-div{
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+
+    .sign-out-div{
+        top: 48rem;
+    }
+
+    .signOut-btn{
+        width: 90%;
+        color: #00A859;
+        border: 1px solid #00A859;
+        background-color: inherit;
+    }    
+
+    .a-link{
+        text-decoration: none;
+    }
+
+}

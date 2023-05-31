@@ -7,6 +7,11 @@ if (!currentUser) {
     window.location.href = "../Signin/signin.html";
 }
 
+//this function navigates the user to the settings/profile page
+function gotoSettings() {
+    window.location.href = "../Profile/profile.html";
+}
+
 
 //passing the current user first name to variable customerName
 let customerName = currentUser.firstName;
@@ -81,13 +86,6 @@ function hideBalance() {
     hideAndShowBalance();
     localStorage.setItem("CU", JSON.stringify(currentUser));
     console.log(currentUser);
-}
-
-function signOut() {
-    localStorage.removeItem('CU');
-    setTimeout(() => {
-        window.location.href = "../Signin/signin.html";
-    }, 2000);
 }
 
 function gotoAirtimeRecharge() {
