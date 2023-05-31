@@ -3,14 +3,20 @@ let payBtn = document.getElementById("pay-btn");
 let inputAmount = document.getElementById("input-amount");
 let loader = document.getElementById("loader");
 let loader2 = document.getElementById("loader2");
+let loader3 = document.getElementById("loader3");
 let confirmationPage = document.getElementById("confirmation");
 let enterPinPage = document.getElementById("enter-pin");
 let confirmBtn = document.getElementById("confirm-btn");
 let selectNetwork = document.getElementById("select-network");
 let phoneNumberInput = document.getElementById("enter-phone-number");
+let rechargeSuccessfulDiv = document.getElementById("recharge-successful-div");
+let rechargeAmount = document.getElementById("show-recharge-amount");
+let cashback = document.getElementById("show-cashback-amount");
 
 loader.style.display = "none";
 loader2.style.display = "none";
+loader3.style.display = "none";
+rechargeSuccessfulDiv.style.display = "none";
 payBtn.disabled = true;
 
 //getting the currently logged in user details from the local storage
@@ -33,6 +39,23 @@ function showNaira() {
 //displaying the user current balance on the airtime recharge confirmation page 
 document.getElementById("show-balance").innerHTML = currentUser.accountBalance.toLocaleString();
 
+let amount;
+
+document.getElementById("enter-valid-number").style.display = "none";
+
+phoneNumberInput.addEventListener('input', ()=>{
+    if (phoneNumberInput.value.length < 10 || phoneNumberInput.value.length > 10) {
+        console.log(phoneNumberInput.value.length);
+        document.getElementById("enter-valid-number").style.display = "block";
+        payBtn.disabled = true;
+        payBtn.style.backgroundColor = "rgb(141, 216, 180)";
+    } else {
+        payBtn.disabled = false
+        payBtn.style.backgroundColor = "rgba(0, 168, 89, 1)";
+        document.getElementById("enter-valid-number").style.display = "none";
+    }
+})
+
 function globalRechargeAirtime(inputType) {
     if (phoneNumberInput.value == "") {
         alert("Enter the Phone number you want to recharge");
@@ -40,11 +63,12 @@ function globalRechargeAirtime(inputType) {
         alert("Please select a network");
     }
     else {
+        amount = inputType;
         loader.style.display = "block"
-        document.getElementById("show-recharge-amount").innerHTML = inputType;
-        document.getElementById("display-recharge-amount").innerHTML = inputType;
+        rechargeAmount.innerHTML = Number(inputType).toLocaleString();
+        document.getElementById("display-recharge-amount").innerHTML = Number(inputType).toLocaleString();
         document.getElementById("show-selected-network").innerHTML = selectNetwork.value;
-        document.getElementById("show-cashback-amount").innerHTML = Number(0.02 * inputType);
+        cashback.innerHTML = Number(0.02 * inputType);
         setTimeout(() => {
             loader.style.display = "none"
             confirmationPage.style.display = "block";
@@ -97,7 +121,7 @@ confirmBtn.addEventListener('click', () => {
     }, 2000);
 })
 
-//the cancel-payment button takes the user back to the airtime main page onclick of the button
+//the cancel-payment buttonf takes the user back to the airtime main page onclick of the button
 document.getElementById("cancel-payment-btn").addEventListener('click', ()=>{
     document.getElementById("cancel-notification-div").style.visibility = "hidden";
     confirmationPage.style.display = "none";
@@ -136,6 +160,7 @@ function verifyRecharge() {
     
     if (currentUser.transactionPin == pinDigits) {
         //a successful pin
+        loader3.style.display = "block";
 
         //creating instant of Date() class
         const date = new Date();
@@ -156,22 +181,35 @@ function verifyRecharge() {
             rechargedNumber: phoneNumberInput.value,
             transactionTime: formattedDate,
             transactionYear: date.getFullYear(),
-            rechargedAmount: inputAmount.value
+            rechargedAmount: amount
         }
 
         //pushing the transaction details (airtimeRechargedData) into the current user transactHistory field
         currentUser.transactionHistory.push(airtimeRechargedData)
 
+        //displaying the current user transaction history on console
         console.log(currentUser.transactionHistory);
 
         //deducting the recharge amount from the current user account balance
-        currentUser.accountBalance -= inputAmount.value;
+        currentUser.accountBalance -= amount;
 
         //updating the current user accountbalance on the all registered user local storage using the currentUserIndex
         allBankEaseUser[currentUserIndex].accountBalance =  currentUser.accountBalance;
         console.log("current user new balance: "+allBankEaseUser[currentUserIndex].accountBalance);
 
-        console.log("yes");
+        //displaying the necessary details of thr Innerhtml of the Tags on the recharge successful page
+        document.getElementById("successful-amount").innerHTML = Number(amount).toLocaleString();
+        document.getElementById("earn-cashback").innerHTML = cashback.innerHTML;
+        document.getElementById("recharged-number").innerHTML = phoneNumberInput.value;
+
+        setTimeout(() => {
+            loader3.style.display = "none";
+            rechargeSuccessfulDiv.style.display = "block";
+        }, 2000);
+
+        //updating the local storage
+        localStorage.setItem('CU', JSON.stringify(currentUser));
+        localStorage.setItem('customers', JSON.stringify(allBankEaseUser));
     } else {
         //a wrong pin is entered
         alert("Invalid Transaction Pin")
@@ -187,4 +225,12 @@ function verifyRecharge() {
     // All PIN digits are filled, proceed with further actions
     console.log('PIN entered:', pinDigits);
     
+}
+
+function gotoAirtimeDashboard() {
+    window.location.href = "airtimeRecharge.html";
+}
+
+function gotoDashboard() {
+    window.location.href = "../Dashboard/dashboard.html";
 }
