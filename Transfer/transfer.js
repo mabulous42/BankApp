@@ -275,6 +275,7 @@ function validatesPin() {
             setTimeout(() => {
                 document.getElementById("loader").style.display = "none";
                 document.getElementById('successful-div').style.display = "block";
+                document.getElementById("transfer-successful-amount").innerHTML = Number(transferAmount.innerHTML).toLocaleString();
             }, 2000);
 
             //creating instant of Date() class
@@ -332,9 +333,6 @@ function validatesPin() {
         for (let i = 0; i < pinInputs.length; i++) {
             pinInputs[i].value = '';
         }
+        pinInputs[0].focus();
     }
 }
-
-// document.getElementById("passDigit4").addEventListener('input', () => {
-
-// })

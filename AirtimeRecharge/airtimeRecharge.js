@@ -160,56 +160,67 @@ function verifyRecharge() {
     
     if (currentUser.transactionPin == pinDigits) {
         //a successful pin
-        loader3.style.display = "block";
 
-        //creating instant of Date() class
-        const date = new Date();
-
-        const options = {
-            month: 'long',
-            day: 'numeric',
-            hour: 'numeric',
-            minute: 'numeric',
-            hour12: true
-        };
-
-        //formatting the date to this format May 28 at 12:50 PM
-        const formattedDate = date.toLocaleString('en-US', options);
-
-        let airtimeRechargedData = {
-            transactionType: "Airtime",
-            rechargedNumber: phoneNumberInput.value,
-            transactionTime: formattedDate,
-            transactionYear: date.getFullYear(),
-            rechargedAmount: amount
+        if (currentUser.accountBalance < amount) {
+            loader3.style.display = "block";
+            setTimeout(() => {
+                loader3.style.display = "none";
+            }, 2000);
+            setTimeout(() => {
+                alert("Insufficient Fund");
+            }, 2500);
+        } else {
+            loader3.style.display = "block";
+    
+            //creating instant of Date() class
+            const date = new Date();
+    
+            const options = {
+                month: 'long',
+                day: 'numeric',
+                hour: 'numeric',
+                minute: 'numeric',
+                hour12: true
+            };
+    
+            //formatting the date to this format May 28 at 12:50 PM
+            const formattedDate = date.toLocaleString('en-US', options);
+    
+            let airtimeRechargedData = {
+                transactionType: "Airtime",
+                rechargedNumber: phoneNumberInput.value,
+                transactionTime: formattedDate,
+                transactionYear: date.getFullYear(),
+                rechargedAmount: amount
+            }
+    
+            //pushing the transaction details (airtimeRechargedData) into the current user transactHistory field
+            currentUser.transactionHistory.push(airtimeRechargedData)
+    
+            //displaying the current user transaction history on console
+            console.log(currentUser.transactionHistory);
+    
+            //deducting the recharge amount from the current user account balance
+            currentUser.accountBalance -= amount;
+    
+            //updating the current user accountbalance on the all registered user local storage using the currentUserIndex
+            allBankEaseUser[currentUserIndex].accountBalance =  currentUser.accountBalance;
+            console.log("current user new balance: "+allBankEaseUser[currentUserIndex].accountBalance);
+    
+            //displaying the necessary details of thr Innerhtml of the Tags on the recharge successful page
+            document.getElementById("successful-amount").innerHTML = Number(amount).toLocaleString();
+            document.getElementById("earn-cashback").innerHTML = cashback.innerHTML;
+            document.getElementById("recharged-number").innerHTML = phoneNumberInput.value;
+    
+            setTimeout(() => {
+                loader3.style.display = "none";
+                rechargeSuccessfulDiv.style.display = "block";
+            }, 2000);
+    
+            //updating the local storage
+            localStorage.setItem('CU', JSON.stringify(currentUser));
+            localStorage.setItem('customers', JSON.stringify(allBankEaseUser));            
         }
-
-        //pushing the transaction details (airtimeRechargedData) into the current user transactHistory field
-        currentUser.transactionHistory.push(airtimeRechargedData)
-
-        //displaying the current user transaction history on console
-        console.log(currentUser.transactionHistory);
-
-        //deducting the recharge amount from the current user account balance
-        currentUser.accountBalance -= amount;
-
-        //updating the current user accountbalance on the all registered user local storage using the currentUserIndex
-        allBankEaseUser[currentUserIndex].accountBalance =  currentUser.accountBalance;
-        console.log("current user new balance: "+allBankEaseUser[currentUserIndex].accountBalance);
-
-        //displaying the necessary details of thr Innerhtml of the Tags on the recharge successful page
-        document.getElementById("successful-amount").innerHTML = Number(amount).toLocaleString();
-        document.getElementById("earn-cashback").innerHTML = cashback.innerHTML;
-        document.getElementById("recharged-number").innerHTML = phoneNumberInput.value;
-
-        setTimeout(() => {
-            loader3.style.display = "none";
-            rechargeSuccessfulDiv.style.display = "block";
-        }, 2000);
-
-        //updating the local storage
-        localStorage.setItem('CU', JSON.stringify(currentUser));
-        localStorage.setItem('customers', JSON.stringify(allBankEaseUser));
     } else {
         //a wrong pin is entered
         alert("Invalid Transaction Pin")

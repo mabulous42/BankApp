@@ -138,14 +138,16 @@
                     <div class="inner-content-div mx-auto">
                         <h3 class="recipient mb-3">Recipient Account</h3>
                         <div class="enter-account w-100 mb-2">
-                            <input type="number" name="" maxlength="10" id="input-accountNumber" class="w-100 rounded ps-4"
-                                placeholder="Enter BankEase account number" oninput="verifyAccountNumber()">
+                            <input type="number" name="" maxlength="10" id="input-accountNumber"
+                                class="w-100 rounded ps-4" placeholder="Enter BankEase account number"
+                                oninput="verifyAccountNumber()">
                         </div>
                         <h6 class="w-100 beneficiary mb-3">Select from Beneficiaries</h6>
                         <div class="show-account-name w-100 mb-5" id="display-account-result-div">
-                            <textarea name="" id="display-verification-result-notfound" value="" cols="30" rows="2" class="w-100 py-2 ps-3 mb-2 rounded" disabled></textarea>
-                            <input type="text" name="" id="display-verification-result-found" value="" class="w-100 py-2 ps-3 mb-2 rounded"
-                                disabled>
+                            <textarea name="" id="display-verification-result-notfound" value="" cols="30" rows="2"
+                                class="w-100 py-2 ps-3 mb-2 rounded" disabled></textarea>
+                            <input type="text" name="" id="display-verification-result-found" value=""
+                                class="w-100 py-2 ps-3 mb-2 rounded" disabled>
                         </div>
                         <div class="transfer-amount-div w-100 d-flex align-items-center justify-content-center">
                             <div class="w-100">
@@ -216,7 +218,8 @@
                             <input type="number" name="" id="" class="w-100 rounded ps-4" placeholder="What is it for?">
                         </div>
                         <div class="position-absolute confirm-btn-div">
-                            <button type="submit" id="transfer-btn" class="w-100 rounded" onclick="gotoConfirmationPage()">Confirm</button>
+                            <button type="submit" id="transfer-btn" class="w-100 rounded"
+                                onclick="gotoConfirmationPage()">Confirm</button>
                         </div>
 
                     </div>
@@ -263,12 +266,33 @@
                             <div class="circle"></div>
                         </div>
                     </div>
-                    <div class="transfer-successful-div position-absolute w-100" id="successful-div">                        
-                        <div class="successful bg-white position-absolute w-100 rounded-top-5 d-flex align-items-center justify-content-center">
+                    <div class="transfer-successful-div position-absolute w-100" id="successful-div">
+                        <div class="successful bg-white position-absolute w-100 rounded-top-5">
                             <div class="position-absolute top-0 end-0 w-25 text-end">
-                                <img src="../images/close-icon.png" alt="" class="w-25 mt-4 me-4" onclick="gotoDashboard()">
+                                <img src="../images/close-icon.png" alt="" class="w-25 mt-4 me-4"
+                                    onclick="gotoDashboard()">
                             </div>
-                            Transfer successful</div>
+                            <div class="w-100 d-flex align-items-center justify-content-center mt-5 pt-4">
+                                <img src="../images/Frame103.png" alt="" class="w-50">
+                            </div>
+                            <h4 class="text-center mt-3">Transfer successful</h4>
+                            <h2 class="text-center">₦<span id="transfer-successful-amount"></span></h2>
+                            <h6 class="text-center mt-2">The recipient account is expected to be credited within 5<br>minutes subjected to notification by the bank</h6>
+                            <div class="mt-5 d-flex align-items-center justify-content-center">
+                                <button type="submit" class="button p-4 rounded me-3">
+                                    <div class="img-mdi mx-auto d-flex align-items-center justify-content-center">
+                                        <img src="../images/mdi_monitor-share.png" alt="" class="w-100">
+                                    </div>
+                                    <h4 class="text-btn mt-2">Share Receipt</h4>
+                                </button>
+                                <button type="submit" class="button p-4 rounded">
+                                    <div class="img-mdi mx-auto d-flex align-items-center justify-content-center">
+                                        <img src="../images/ci_user-add.png" alt="" class="w-100">
+                                    </div>
+                                    <h4 class="text-btn mt-2">Add to favourite</h4>
+                                </button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -237,7 +237,6 @@
         background-color: rgba(0, 175, 239, 1);
         top: 0;
         right: 428px;
-        /* right: 0; */
         z-index: 99991;
         transition: all 1s ease;
     }
@@ -307,7 +306,6 @@
 
     .transaction-pin{
         bottom: 0;
-        /* bottom: -30vh;         */
         transition: all 0.5s linear;
         background-color: white;
     }
@@ -412,6 +410,41 @@
     .successful{
         height: 80vh;
         bottom: 0;
+    }
+
+    .successful h4{
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 21px;
+    }
+
+    .successful h2{
+        font-weight: 800;
+        font-size: 36px;
+        line-height: 42px;
+    }
+
+    .successful h6{
+        font-weight: 400;
+        line-height: 16px;
+        font-size: 14px;
+        color: rgba(0, 168, 89, 1);
+    }
+
+    .img-mdi{
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+
+    .text-btn{
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 19px;
+    }
+
+    .button{
+        border: 1px solid #00A859;
+        background-color: inherit;
     }
 
 }
