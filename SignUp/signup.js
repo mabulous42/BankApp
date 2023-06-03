@@ -92,6 +92,10 @@ let bankEaseCustomers = JSON.parse(localStorage.getItem('customers')) || [];
 //registering a new user
 signUpBtn.addEventListener("click", (ev) => {
     ev.preventDefault();
+    
+    let image = new Image();
+    image.src = "../images/user.png";
+    let profileImage = image.src;
 
     let data = {
         firstName: firstName.value,
@@ -101,6 +105,7 @@ signUpBtn.addEventListener("click", (ev) => {
         accountBalance: 100000.00,
         password: passwordInput.value,
         transactionHistory: [],
+        profilePicture: profileImage,
         isHide: false
     }
 
@@ -151,7 +156,7 @@ signUpBtn.addEventListener("click", (ev) => {
         localStorage.setItem('customers', JSON.stringify(bankEaseCustomers));
         console.log(bankEaseCustomers);
         setTimeout(() => {
-            window.location.href = "../Generating/generating.html";            
+            window.location.href = "../Generating/generating.html";
         }, 2000);
     }
 })

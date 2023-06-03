@@ -92,6 +92,7 @@ function gotoAirtimeRecharge() {
     window.location.href = "../AirtimeRecharge/airtimeRecharge.html";
 }
 
+
 function displayProfileImage() {
     document.getElementById("displaypictureTag").innerHTML = `
     <img src="${currentUser.profilePicture}" alt="" class="avatar rounded-circle" onclick="gotoSettings()">

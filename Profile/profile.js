@@ -31,6 +31,7 @@ function uploadImage(event) {
         currentUser.profilePicture = imgUrl;
         allBankEaseUser[currentUserIndex].profilePicture = currentUser.profilePicture;
         console.log(allBankEaseUser[currentUserIndex].profilePicture);
+        displayProfileImage();
         localStorage.setItem("CU", JSON.stringify(currentUser));
         localStorage.setItem("customers", JSON.stringify(allBankEaseUser));
     })
