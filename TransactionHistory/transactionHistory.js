@@ -28,7 +28,7 @@ function allTransactionHistory() {
                             <div>
                                 <div class='t-type'>${element.transactionType}</div>
                                 <div class='d-flex align-items-center t-name-date'>
-                                    <div>${element.accountName}</div>
+                                    <div>${element.senderAccountName}</div>
                                     <span class='mx-1'>-</span>
                                     <div>${element.transactionTime}</div>
                                 </div>
@@ -50,7 +50,7 @@ function allTransactionHistory() {
                             <div>
                                 <div class='t-type'>${element.transactionType}</div>
                                 <div class='d-flex align-items-center t-name-date'>
-                                    <div>${element.accountName}</div>
+                                    <div>${element.receipientAccountName}</div>
                                     <span class='mx-1'>-</span>
                                     <div>${element.transactionTime}</div>
                                 </div>

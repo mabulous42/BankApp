@@ -315,7 +315,7 @@ function validatesPin() {
                 transactionType: "Money Received",
                 receipientAccountName: beneficiaryName,
                 recipientAccountNumber: foundBeneficiary.accountNumber,
-                senderAccountName: currentCustomer.accountName,
+                senderAccountName: currentCustomerName,
                 senderAccountNumber: currentCustomer.accountNumber,
                 transactionTime: formattedDate,
                 transactionYear: date.getFullYear(),
