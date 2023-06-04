@@ -102,7 +102,7 @@
         background-color: rgba(0, 168, 89, 1);
         top: 0;
         right: 428px;
-        right: 0;
+        /* right: 0; */
         z-index: 9999;
         transition: all 1s ease;
     }
@@ -250,7 +250,7 @@
         background-color: rgba(0, 0, 0, 0.534);
         height: 100vh;
         top: 0;
-        /* display: none; */
+        display: none;
     }
 
     .transfer-confirmation-div{
@@ -301,7 +301,7 @@
         height: 100vh;
         top: 0;
         background-color: rgba(0, 0, 0, 0.616);
-        /* display: none; */
+        display: none;
     }
 
     .transaction-pin{
@@ -404,7 +404,7 @@
         top: 0;
         height: 100vh;
         background-color: rgba(0, 0, 0, 0.541);
-        /* display: none; */
+        display: none;
     }
 
     .successful{
@@ -512,6 +512,7 @@
         font-size: 12px;
         line-height: 15px;
         color: black;
+        width: 90%;
     }
 
     .share-btn-div{
@@ -553,6 +554,12 @@
         font-size: 24px;
         line-height: 28px;
         font-weight: 400;
+    }
+
+    .download-receipt{
+        top: 0;
+        height: 100vh;
+        background-color: white;
     }
 
 }

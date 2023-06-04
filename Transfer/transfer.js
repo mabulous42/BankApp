@@ -101,7 +101,6 @@ function generalDisplay(num, displayTag) {
 
 }
 
-
 //displaying number(parameter) on the screen
 function displayNumber(num) {
     enterWithKeyPad.style.display = "none";
@@ -324,6 +323,16 @@ function validatesPin() {
 
             }
 
+            //printing all the required data on the receipt
+            document.getElementById("receipt-amount").innerHTML = Number(transferAmount.innerHTML).toLocaleString();
+            document.getElementById("receipt-transaction-type").innerHTML = "Money Sent";
+            document.getElementById("transaction-date").innerHTML = formattedDate;
+            document.getElementById("receipient-name").innerHTML = beneficiaryName;
+            document.getElementById("receipient-account").innerHTML = foundBeneficiary.accountNumber;
+            document.getElementById("sender-name").innerHTML = currentCustomerName;
+            document.getElementById("sender-account").innerHTML = currentCustomer.accountNumber;
+            document.getElementById("reference").innerHTML = referenceID;
+
             //pushing the transaction data of the money sent into the currentCustomer transactionHistory field after a successful transaction
             allBankEaseUser[currentCustomerIndex].transactionHistory.push(moneySentData);
 
@@ -348,4 +357,60 @@ function validatesPin() {
         }
         pinInputs[0].focus();
     }
+}
+
+let PDFImageModal = document.getElementById("pdfImageModal");
+PDFImageModal.style.display = "none";
+
+document.getElementById("btn-line").style.display = "none";
+
+//this function closes the PDF-Image button div
+function closePDFImageModal() {
+    PDFImageModal.style.display = "none";
+}
+
+//this function opens the PDF-Image button div
+function openPDFImageModal() {
+    PDFImageModal.style.display = "block";
+}
+
+let content = document.getElementById("receipt-content");
+content.style.display = "none";    
+
+function closeReceiptModal() {
+    content.style.display = "none";    
+}
+
+function openReceiptContent() {
+    content.style.display = "block";    
+}
+
+function generateImage() {
+    document.getElementById("share-btn-div").style.display = "none";
+    document.getElementById("btn-line").style.display = "block";
+    document.getElementById("receipt-header").style.display = "none";
+    document.getElementById("support-text").style.display = "none";
+    document.getElementById("hr").style.display = "none";
+    PDFImageModal.style.display = "none";
+    setTimeout(() => {
+        html2canvas(content)
+            .then(function (canvas) {
+                const image = canvas.toDataURL('image/png');
+                const link = document.createElement('a');
+                link.href = image;
+                link.download = 'BankEaseTransaction_Receipt.png';
+                link.click();
+            });        
+    }, 1500);
+}
+
+function generatePDF() {
+
+    html2canvas(content)
+        .then(function (canvas) {
+            const imgData = canvas.toDataURL('image/png');
+            const pdf = new jsPDF();
+            pdf.addImage(imgData, 'PNG', 0, 0);
+            pdf.save('page_document.pdf');
+        });
 }
