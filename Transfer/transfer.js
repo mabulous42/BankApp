@@ -301,8 +301,8 @@ function validatesPin() {
             let moneySentData = {
                 transactionType: "Money Sent",
                 receipientAccountName: beneficiaryName,
-                recipientAccountNumber: foundBeneficiary.accountNumber,
-                senderAccountName: currentCustomer.accountName,
+                receipientAccountNumber: foundBeneficiary.accountNumber,
+                senderAccountName: currentCustomerName,
                 senderAccountNumber: currentCustomer.accountNumber,
                 transactionTime: formattedDate,
                 transactionYear: date.getFullYear(),
@@ -313,7 +313,7 @@ function validatesPin() {
             let moneyReceivedData = {
                 transactionType: "Money Received",
                 receipientAccountName: beneficiaryName,
-                recipientAccountNumber: foundBeneficiary.accountNumber,
+                receipientAccountNumber: foundBeneficiary.accountNumber,
                 senderAccountName: currentCustomerName,
                 senderAccountNumber: currentCustomer.accountNumber,
                 transactionTime: formattedDate,

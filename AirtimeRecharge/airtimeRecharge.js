@@ -191,6 +191,7 @@ function verifyRecharge() {
     
             let airtimeRechargedData = {
                 transactionType: "Airtime",
+                rechargeNetwork: selectNetwork.value,
                 rechargedNumber: phoneNumberInput.value,
                 transactionTime: formattedDate,
                 transactionYear: date.getFullYear(),
@@ -200,7 +201,10 @@ function verifyRecharge() {
             }
     
             //pushing the transaction details (airtimeRechargedData) into the current user transactHistory field
-            currentUser.transactionHistory.push(airtimeRechargedData)
+            currentUser.transactionHistory.push(airtimeRechargedData);
+
+            //pushing the transaction details (airtimeRechargedData) into the allBankEase user transactHistory field
+            allBankEaseUser[currentUserIndex].transactionHistory.push(airtimeRechargedData);
     
             //displaying the current user transaction history on console
             console.log(currentUser.transactionHistory);

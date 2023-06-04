@@ -116,5 +116,120 @@
     option{
         font-size: 10px;
     }
+/* ---------------------------------------------------------------------- */
+    .receipt-div{
+        top: 0;
+        height: 100vh;
+        background-color: white;
+    }
+
+    .receipt-header {
+        width: 90%;
+    }
+
+    .receipt-header h5 {
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 23px;
+    }
+
+    .receipt{
+        border-bottom: 0.5px solid #D9D9D9;
+    }
+
+    .receipt-content-div{
+        width: 90%;
+    }
+
+    .c-header{
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 16px;
+    }
+
+    .receipt-content-div h1{
+        font-size: 36px;
+        font-weight: 800;
+        line-height: 42px;
+    }
+
+    .receipt-content-div h6{
+        color: rgba(0, 168, 89, 1);
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 19px;
+    }
+
+    .receipt-content-div h5,
+    .receipt-content-div h3,
+    .receipt-content-div p{
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 16px;
+        color: rgba(159, 158, 158, 1);
+    }
+
+    .receipt-content-div h3{
+        color: black;
+    }
+
+    .receipt-content-div p{
+        color: rgba(0, 168, 89, 1);
+    }
+
+    .support-text{
+        font-weight: 300;
+        font-size: 12px;
+        line-height: 15px;
+        color: black;
+        width: 90%;
+    }
+
+    .share-btn-div{
+        margin-top: 5rem;
+        width: 90%;
+    }
+
+    .share-btn-div button{
+        background-color: rgba(0, 168, 89, 1);
+        border: 1px solid #00A859;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 19px;
+    }
+
+    .png-pdf-div{
+        top: 0;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.432);
+    }
+
+    .inner-png-div{
+        bottom: 0;
+        background-color: white;
+    }
+
+    .close-icon-div{
+        right: 1rem;
+        top: 1rem;
+    }
+
+    .btns-div{
+        width: 90%;
+    }
+
+    .btns-div button{
+        border: 1px solid #C6C4C4;
+        color: rgba(0, 168, 89, 1);
+        font-size: 24px;
+        line-height: 28px;
+        font-weight: 400;
+    }
+
+    .download-receipt{
+        top: 0;
+        height: 100vh;
+        background-color: white;
+    }
 
 }
