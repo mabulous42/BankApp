@@ -294,21 +294,34 @@ function validatesPin() {
 
             console.log(formattedDate);
 
+            //generating a reference ID for the transaction
+            let referenceID = Math.floor(Math.random() * Number(1000000000000000));
+
+
             //pushing some of the transaction data to transactionHistory local storage
             let moneySentData = {
                 transactionType: "Money Sent",
-                accountName: beneficiaryName,
+                receipientAccountName: beneficiaryName,
+                recipientAccountNumber: foundBeneficiary.accountNumber,
+                senderAccountName: currentCustomer.accountName,
+                senderAccountNumber: currentCustomer.accountNumber,
                 transactionTime: formattedDate,
                 transactionYear: date.getFullYear(),
-                transferAmount: transferAmount.innerHTML
+                transferAmount: transferAmount.innerHTML,
+                transactionReference: referenceID
             }
 
             let moneyReceivedData = {
                 transactionType: "Money Received",
-                accountName: currentCustomerName,
+                receipientAccountName: beneficiaryName,
+                recipientAccountNumber: foundBeneficiary.accountNumber,
+                senderAccountName: currentCustomer.accountName,
+                senderAccountNumber: currentCustomer.accountNumber,
                 transactionTime: formattedDate,
                 transactionYear: date.getFullYear(),
-                transferAmount: transferAmount.innerHTML
+                transferAmount: transferAmount.innerHTML,
+                transactionReference: referenceID
+
             }
 
             //pushing the transaction data of the money sent into the currentCustomer transactionHistory field after a successful transaction

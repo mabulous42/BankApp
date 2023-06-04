@@ -18,7 +18,6 @@ function allTransactionHistory() {
         } else {
             currentUser.transactionHistory.forEach(element => {
                 let transactionAmount = Number(element.transferAmount).toLocaleString();
-                console.log(transactionAmount);
                 if (element.transactionType == "Money Received") {
                     displayHistoryTag.innerHTML += `
                     <div class="mx-auto d-flex align-items-center justify-content-between d-history mb-2 pb-2">

@@ -185,13 +185,18 @@ function verifyRecharge() {
     
             //formatting the date to this format May 28 at 12:50 PM
             const formattedDate = date.toLocaleString('en-US', options);
+
+            //generating a reference ID for the transaction
+            let referenceID = Math.floor(Math.random() * Number(1000000000000000));
     
             let airtimeRechargedData = {
                 transactionType: "Airtime",
                 rechargedNumber: phoneNumberInput.value,
                 transactionTime: formattedDate,
                 transactionYear: date.getFullYear(),
-                rechargedAmount: amount
+                rechargedAmount: amount,
+                transactionReference: referenceID
+                
             }
     
             //pushing the transaction details (airtimeRechargedData) into the current user transactHistory field

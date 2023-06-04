@@ -8,7 +8,6 @@ function displayHistory() {
         loader.style.display = "none";
         let filteredArray = currentUser.transactionHistory.filter(item => item.transactionType == "Airtime");
         console.log(filteredArray);
-
         if (filteredArray == "") {
             displayHistoryTag.innerHTML = `
             <div class='d-flex align-items-center justify-content-center'>
