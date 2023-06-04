@@ -528,8 +528,31 @@
     }
 
     .png-pdf-div{
+        top: 0;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.432);
+    }
+
+    .inner-png-div{
         bottom: 0;
-        background-color: red;
+        background-color: white;
+    }
+
+    .close-icon-div{
+        right: 1rem;
+        top: 1rem;
+    }
+
+    .btns-div{
+        width: 90%;
+    }
+
+    .btns-div button{
+        border: 1px solid #C6C4C4;
+        color: rgba(0, 168, 89, 1);
+        font-size: 24px;
+        line-height: 28px;
+        font-weight: 400;
     }
 
 }
